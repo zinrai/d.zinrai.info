@@ -1,0 +1,6 @@
+baseURL = "/"
+relativeurls = true
+languageCode = "ja"
+hasCJKLanguage = true
+title = "TypeError:"
+theme = "tale-hugo"
