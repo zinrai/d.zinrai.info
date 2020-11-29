@@ -3,4 +3,15 @@ relativeurls = true
 languageCode = "ja"
 hasCJKLanguage = true
 title = "TypeError:"
-theme = "tale-hugo"
+theme = "hugo-kiera"
+
+[author]
+    name = "zinrai"
+    github = "zinrai"
+    twitter = "zinrai"
+
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags"
+  weight = 1
