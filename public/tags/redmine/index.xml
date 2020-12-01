@@ -6,73 +6,71 @@
    <description>Recent content in redmine on TypeError:</description>
    <generator>Hugo -- gohugo.io</generator>
    <language>ja</language>
-   <lastBuildDate>Fri, 20 Nov 2020 01:07:52 +0900</lastBuildDate>
+   <lastBuildDate>Wed, 02 Dec 2020 00:04:52 +0900</lastBuildDate>
    
        <atom:link href="/tags/redmine/index.xml" rel="self" type="application/rss+xml" />
    
    
      <item>
-       <title>「チケット駆動開発がまわりはじめるまでの取り組み」をテキスト化します</title>
+       <title>「チケット駆動開発がまわりはじめるまでの取り組み」のテキスト化</title>
        <link>/posts/ssmjp-advent-calendar-2020-day2/</link>
-       <pubDate>Fri, 20 Nov 2020 01:07:52 +0900</pubDate>
+       <pubDate>Wed, 02 Dec 2020 00:04:52 +0900</pubDate>
        
        <guid>/posts/ssmjp-advent-calendar-2020-day2/</guid>
-       <description>&lt;p&gt;2020年9月に「 Redmine Japan 2020 」にて「チケット駆動開発がまわりはじめるまでの取り組み」というタイトルで発表させていただきました。&lt;/p&gt;
-&lt;p&gt;マインドセットや実際の取り組みについてお話しましたが、
-自身が6年間「チケット駆動開発」してきた中で、そのマインドセットに至るまでのストーリー、
-個々の取り組みが具体的にどのように進められたのかという内容は、
-与えられた23分の時間の中で話すことは難しかったので、削ぎ落しました。&lt;/p&gt;
+       <description>&lt;p&gt;&lt;a href=&#34;https://adventar.org/calendars/5210&#34;&gt;#ssmjp Advent Calendar 2020&lt;/a&gt; 2日目の記事です。&lt;/p&gt;
+&lt;p&gt;2020年9月に「 Redmine Japan 2020 」にて
+「チケット駆動開発がまわりはじめるまでの取り組み」というタイトルで発表させていただきました。&lt;/p&gt;
+&lt;p&gt;Redmine Japan 2020&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://redmine-japan.org/&#34;&gt;https://redmine-japan.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;チケット駆動開発がまわりはじめるまでの取り組み&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://speakerdeck.com/zinrai/okr-tidd-case&#34;&gt;https://speakerdeck.com/zinrai/okr-tidd-case&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;自身が6年間「チケット駆動開発」してきた中で、マインドセットに至るまでの話、
+個々の取り組みを具体的にどう考え、どのように進めていったのかという話は、
+与えられた23分間では触れることができませんでした。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://adventar.org/calendars/5210&#34;&gt;#ssmjp Advent Calendar 2020&lt;/a&gt;
-という場を借りて、少しずつスライドの詳細をテキスト化していきます。&lt;/p&gt;
+という場を借りて、お話できなかった内容を少しずつテキスト化していきます。
+次回から、下記に書いてあるようなことを書く予定でいます。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;マインドセット
+&lt;li&gt;「チケット駆動開発がまわりはじめるまでの取り組み」のテキスト化&lt;/li&gt;
+&lt;li&gt;「チケット駆動開発」との出会い&lt;/li&gt;
+&lt;li&gt;「チケット駆動開発がまわりはじめるまでの取り組み」マインドセット
 &lt;ul&gt;
-&lt;li&gt;前職でやってきたこと&lt;/li&gt;
-&lt;li&gt;現職でやっていること&lt;/li&gt;
-&lt;li&gt;マインドセットにいきつくまでのストーリー&lt;/li&gt;
+&lt;li&gt;マインドセットにいきつくまでの話&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;チケット駆動に対する自身の考え&lt;/li&gt;
-&lt;li&gt;チケット駆動開発がまわりはじめるまでのスケジュール感&lt;/li&gt;
-&lt;li&gt;現職で働きはじめてからの強烈な違和感と動きにくさ&lt;/li&gt;
-&lt;li&gt;チームでの課題感&lt;/li&gt;
-&lt;li&gt;一人チケット駆動開発&lt;/li&gt;
-&lt;li&gt;チケット駆動開発に前向きな方がいるか&lt;/li&gt;
-&lt;li&gt;チームメンバーを巻き込む&lt;/li&gt;
-&lt;li&gt;自身の作業をチケット化することに慣れる
+&lt;li&gt;「チケット駆動開発」導入のスケジュール感&lt;/li&gt;
+&lt;li&gt;「チケット駆動開発がまわりはじめるまでの取り組み」チームでの違和感&lt;/li&gt;
+&lt;li&gt;「チケット駆動開発がまわりはじめるまでの取り組み」チームでの課題感&lt;/li&gt;
+&lt;li&gt;何故「チケット駆動開発」を導入できそうと感じたのか&lt;/li&gt;
+&lt;li&gt;「チケット駆動開発がまわりはじめるまでの取り組み」一人チケット駆動開発&lt;/li&gt;
+&lt;li&gt;チケット駆動開発をチームメンバーに展開する
 &lt;ul&gt;
+&lt;li&gt;「チケット駆動」に対する自身の考えをプレゼン&lt;/li&gt;
 &lt;li&gt;「タスク」というものが何かについてのハンズオン&lt;/li&gt;
+&lt;li&gt;Redmine の運用ルールの整備&lt;/li&gt;
+&lt;li&gt;Redmine の運用ルールの展開&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;チケットをベースにチームメンバーと協力しながら作業を進める&lt;/li&gt;
-&lt;li&gt;ベンダーへの問い合せ&lt;/li&gt;
+&lt;li&gt;自身の作業をチケット駆動することに慣れる&lt;/li&gt;
+&lt;li&gt;チームメンバーをチケット駆動に巻き込むことに慣れる&lt;/li&gt;
 &lt;li&gt;エスカレーション対応&lt;/li&gt;
+&lt;li&gt;ベンダーへの問い合せ&lt;/li&gt;
+&lt;li&gt;チケット駆動開発を使ったチームへの人の受け入れ&lt;/li&gt;
 &lt;li&gt;「チケット駆動開発」を導入しての成果と課題&lt;/li&gt;
-&lt;li&gt;「チケット駆動開発」にて感じた課題を解決するアプローチ
-&lt;ul&gt;
-&lt;li&gt;OKR&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;「チケット駆動開発」にて感じた課題を解決するアプローチ&lt;/li&gt;
 &lt;li&gt;OKR を運用するプロセス
 &lt;ul&gt;
 &lt;li&gt;OKR の設定&lt;/li&gt;
 &lt;li&gt;OKR とチケット駆動開発の組み合わせ&lt;/li&gt;
 &lt;li&gt;OKR に近づくためのプロセス&lt;/li&gt;
 &lt;li&gt;OKR ふりかえり&lt;/li&gt;
+&lt;li&gt;OKR を運用してみて&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;OKR を運用してみて&lt;/li&gt;
 &lt;li&gt;2020年度第3四半期 OKRについて&lt;/li&gt;
-&lt;li&gt;これからの動きとして考えていること&lt;/li&gt;
+&lt;li&gt;「チケット駆動開発」と「 OKR 」でのチームビルディングについてこれから&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Redmine Japan 2020&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://redmine-japan.org/&#34;&gt;https://redmine-japan.org/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;REDMINE JAPAN 2020 オンライン開催&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://redmine-japan.connpass.com/event/182601/&#34;&gt;https://redmine-japan.connpass.com/event/182601/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;#ssmjp Advent Calendar 2020&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://adventar.org/calendars/5210&#34;&gt;https://adventar.org/calendars/5210&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;チケット駆動開発がまわりはじめるまでの取り組み&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://speakerdeck.com/zinrai/okr-tidd-case&#34;&gt;https://speakerdeck.com/zinrai/okr-tidd-case&lt;/a&gt;&lt;/p&gt;
 </description>
      </item>
    
