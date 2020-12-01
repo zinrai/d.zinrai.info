@@ -4,6 +4,7 @@ languageCode = "ja"
 hasCJKLanguage = true
 title = "TypeError:"
 theme = "hugo-kiera"
+googleAnalytics = "UA-184310934-2"
 
 [author]
     name = "zinrai"
