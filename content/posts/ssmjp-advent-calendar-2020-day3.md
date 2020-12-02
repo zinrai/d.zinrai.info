@@ -1,8 +1,7 @@
 ---
 title: "「チケット駆動開発」との出会い"
-date: 2020-12-03T12:04:19+09:00
+date: 2020-12-03T00:02:19+09:00
 tags: ["tidd", "ssmjp", "redmine"]
-draft: true
 ---
 
 [#ssmjp Advent Calendar 2020](https://adventar.org/calendars/5210) 3日目の記事です。
