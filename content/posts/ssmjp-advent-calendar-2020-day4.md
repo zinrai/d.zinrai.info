@@ -1,7 +1,7 @@
 ---
 title: "マインドセットに至るまでの話"
 date: 2020-12-04T12:06:12+09:00
-draft: true
+tags: ["tidd", "ssmjp", "redmine"]
 ---
 
 [#ssmjp Advent Calendar 2020](https://adventar.org/calendars/5210) 4日目の記事です。
