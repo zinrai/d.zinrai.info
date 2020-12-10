@@ -1,0 +1,310 @@
+<!doctype html>
+
+<html lang="ja">
+
+<head>
+  <title>チケット駆動開発の運用にて開発した小さなツール達 - TypeError:</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="zinrai" /><meta property="og:title" content="チケット駆動開発の運用にて開発した小さなツール達" />
+<meta property="og:description" content="Redmine Advent Calendar 2020 10日目の記事です。 #ssmjp Advent Calendar 2020 で、 Redmine Japan 2020 にて発表した 「チケット駆動開発がまわりはじめるまでの取り組み」で、 お話できなかった内容を少しず" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/redmine-advent-calendar-2020-day10/" />
+<meta property="article:published_time" content="2020-12-10T10:19:01+09:00" />
+<meta property="article:modified_time" content="2020-12-10T10:19:01+09:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="チケット駆動開発の運用にて開発した小さなツール達"/>
+<meta name="twitter:description" content="Redmine Advent Calendar 2020 10日目の記事です。 #ssmjp Advent Calendar 2020 で、 Redmine Japan 2020 にて発表した 「チケット駆動開発がまわりはじめるまでの取り組み」で、 お話できなかった内容を少しず"/>
+
+<meta name="generator" content="Hugo 0.71.1" />
+    
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="../../css/styles.css" /></head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="../../">TypeError:</a>
+            </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/zinrai" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://twitter.com/zinrai" title="Twitter">
+               <i class="fab fa-twitter fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="../../tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>チケット駆動開発の運用にて開発した小さなツール達</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2020-12-10T10:19:01&#43;09:00">Dec 10, 2020</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="../../tags/redmine">#redmine</a>
+                
+                    , 
+                    <a href="../../tags/tidd">#tidd</a>
+                
+            </em>
+        </li>
+        
+
+        <li>8 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    
+
+
+    <p><a href="https://adventar.org/calendars/5392">Redmine Advent Calendar 2020</a> 10日目の記事です。</p>
+<p><a href="https://adventar.org/calendars/5210">#ssmjp Advent Calendar 2020</a> で、
+<a href="https://redmine-japan.org/">Redmine Japan 2020</a> にて発表した
+「<a href="https://speakerdeck.com/zinrai/okr-tidd-case">チケット駆動開発がまわりはじめるまでの取り組み</a>」で、
+お話できなかった内容を少しずつテキスト化しています。
+今のところ、チケット駆動開発との出会い、なぜそのマインドセットに至っているのか、
+いまの自分がチケット駆動開発に対して考えていること、
+チケット駆動開発の導入をどう考えたのか、
+なぜチケット駆動開発を導入しようと思ったのか、
+などが書き出せています。よかったら眺めてみてください。</p>
+<p>毎日、3000字ほど書くということを課されている状態でなかなか大変です。
+途中、予定通りにコンテンツを追加できないことがあるかもしれませんが、
+できるだけ食らい付いていきたいと思っています。</p>
+<p>今日は、「<a href="https://speakerdeck.com/zinrai/okr-tidd-case">チケット駆動開発がまわりはじめるまでの取り組み</a>」
+を運用していく中で開発した小さなツール達を
+<a href="https://adventar.org/calendars/5392">Redmine Advent Calendar 2020</a>
+の場を借りて紹介していきます。</p>
+<p>私の整備した <a href="https://qiita.com/zinrai/items/78fbb2616a6d86af71b2">HashiCorp Nomad で作るコンテナ実行基盤</a> の上で動いているものがほとんどです。</p>
+<h2 id="project-redmine-backup">project-redmine-backup</h2>
+<p><a href="https://www.redmine.org/">Redmine</a> のデータベースは <a href="https://www.postgresql.org/">PostgreSQL</a> を使っています。
+バックアップは大事です。
+<a href="https://www.postgresql.jp/document/12/html/app-pgdump.html">pg_dump</a> コマンドを使いデータベースをバックアップし、
+<a href="https://rclone.org/">Rclone</a> を使い某クラウドストレージにバックアップを転送するシェルスクリプトになっています。</p>
+<p><a href="https://rclone.org/">Rclone</a> を使うとクラウドストレージの API と格闘したり、
+API を操作するための処理を書いたりせずに、
+コマンドラインで気軽にクラウドストレージにデータを転送できたり、
+ファイルを何世代残すのかをコマンドラインオプションだけで制御できたりして、
+クラウドストレージへの操作がとても楽です。</p>
+<p>とても便利に使わせてもらっているので、
+<a href="https://rclone.org/donate/">PayPal 経由で寄付</a> しようとしたのですが、エラーが出て寄付できませんでした。
+誰か、寄付の方法を知っていたら教えて欲しいです。</p>
+<p>シェルスクリプトは <a href="https://www.docker.com/">Docker</a> でコンテナ化され、
+<a href="https://www.nomadproject.io/">Nomad</a> にバッチスケジューラとして登録されており、
+Nomad の管理下で1時間おきに Docker コンテナが起動しています。</p>
+<h2 id="project-sandbox-restore">project-sandbox-restore</h2>
+<p>特定のプロジェクトにおいて <a href="https://www.redmine.org/projects/redmine/wiki/rest_api">Redmine API</a> を使いチケットを作りたいという要望がチームメンバーから上がりました。
+本番稼動している Redmine 環境にてテストしてもらうわけにはいかないので、
+サンドボックス環境を用意し、そこで「自由にテストしてね」というようにしています。</p>
+<p>サンドボックス環境では、バックアップしているデータベースを使ってカジュアルにリストアできるようにしています。
+うっかり本番環境のデータベースをバックアップと入れ替えてしまわないように、
+サンドボックス環境でしか動かないリストア用のコマンドを開発し提供しています。
+十数行の小さなシェルスクリプトです。
+サンドボックス環境のリストアは、そのコマンド経由で実行してもらっています。</p>
+<h2 id="redmine2slack">redmine2slack</h2>
+<p>現職では Slack がコミュニケーションの基盤になっています。
+<a href="https://www.redmine.org/">Redmine</a> での活動を演出するため、
+Slack に専用のチャンネルを用意し、
+Redmine の「活動」の Atom を Slack に通知する仕組みを作りました。</p>
+<p>アプリケーションは <a href="https://www.python.org/">Python</a> で書き、
+<a href="https://www.docker.com/">Docker</a> でコンテナ化されています。</p>
+<p><a href="https://www.nomadproject.io/">Nomad</a> にバッチスケジューラとして登録されており、
+Nomad の管理下で15分おきに Docker コンテナが起動しています。</p>
+<h2 id="redmine-today-activity">redmine-today-activity</h2>
+<p>現在は、 Redmine での活動を一覧しながら日次のミーティングを行っています。
+アプリケーションを開発しなくても Redmine のカスタムクエリを使えば一覧できるのではないかと思われるかもしれません。
+複数のプロジェクトにまたがったカスタムクエリを Redmine に登録しているユーザーに公開できなかったり、
+私が管理者をしている Redmine 以外にもチームメンバーが起票する Redmine が存在しており、
+それらを全て集計しなければチームメンバーの活動が見えないという状況でした。</p>
+<p>チームメンバーが利用している Redmine を洗い出し、
+一つの画面で当日の動きが一覧できる Web アプリケーションを開発しました。</p>
+<p>アプリケーションは <a href="https://www.python.org/">Python</a> +
+<a href="https://flask.palletsprojects.com/">Flask</a> で書き、
+<a href="https://gunicorn.org/">Gunicorn</a> 経由で起動するようになっており、
+<a href="https://www.docker.com/">Docker</a> でコンテナ化しています。</p>
+<p><a href="https://www.nomadproject.io/">Nomad</a> にサービススケジューラとして登録されており、
+Nomad の管理下で Docker コンテナが起動し、 <a href="https://traefik.io/">Traefik</a> 経由で、
+アプリケーションに接続する構成となっています。</p>
+<h2 id="project-escala-activiety">project-escala-activiety</h2>
+<p>チームに来た問い合せ、アラート対応などを行うためのプロジェクトを用意し運用しています。
+アラート対応は、復旧対応までとしており、恒久対応がある場合は別プロジェクトにて管理します。
+問い合せも回答までに数週間掛かるようなものはほとんどありません。
+このプロジェクトに作られたチケットがクローズされるまでの期間は短かいです。</p>
+<p>よくチケットが放置されており、治安が良くないなと思ったと同時に、
+これを誰かが警察し続けるのは、その人の頑張りに依存してしまうので、
+チームメンバーにチケットを放置しないことを意識してもらう方向に舵を切りたいなと考えました。</p>
+<p>最後のチケットの更新日から7日間経過しているクローズしていないチケットを
+Slack にメンション付きで通知することにしました。
+日次のミーティングにてチームメンバーにメンションされたら、
+チケットの状況を確認してステータスの変更またはコメントを追記してくださいと伝え合意を得ました。</p>
+<p>アプリケーションは <a href="https://www.python.org/">Python</a> で書き、
+<a href="https://www.docker.com/">Docker</a> でコンテナ化されています。</p>
+<p><a href="https://www.nomadproject.io/">Nomad</a> にバッチスケジューラとして登録されており、
+Nomad の管理下で毎日、始業時間に Docker コンテナが起動し、
+該当するチケットを洗い出し、担当者に Slack でメンションしています。</p>
+<p>仕組みを入れただけですぐに状況が改善されたりはしません。
+同じチケットが毎日メンションされ続けていることに対して、
+切り込んでいかなければならない状況となっています。</p>
+<h2 id="時間を計算ボタン">「時間を計算」ボタン</h2>
+<p>時間を付けていきましょうとチームで認識は合わせましたが、
+それで時間が付きはじめるとは思っていません。
+実際に redmine-time-entries で集計してみてもチームメンバーの半分は時間が付いていない状態でした。
+認識は合わせたが、どのような心境であるかをヒアリングしたところ、
+「時間の入力が手間で、時間を入力するコストを下げたい」というようなコメントが上がってきました。</p>
+<p>Redmine Plugin をゴリゴリ書きはじめるのはコスト高いなと思ったので、
+<a href="https://github.com/onozaty/redmine-view-customize">Redmine view customize plugin</a> を使い、
+JavaScript で時間を計算して自動で項目を埋めるボタンを作りました。
+JavaScript とか jQuery とか全然使わないので、数十行書くのに4時間くらい掛かってしまいました。</p>
+<p>( <a href="https://github.com/onozaty/redmine-view-customize">Redmine view customize plugin</a>
+とても便利に使わせてもらっています。開発者の方ありがとうございます。 )</p>
+<p>最後にチケットを更新した日時を取得し、
+現在時刻との時間差を計算し作業時間を埋めるという「時間を計算」ボタンを JavaScript にて実装しました。
+最後にチケットを更新した日時を無制限に許容すると、
+とんでもない時間が付いてしまう可能性があるため、
+最後の更新から2時間以上経過している場合は、
+自動では入力せず「手動で入力してね」というメッセージを出すようにしています。</p>
+<p><img src="../../imgs/time-entries.png" alt="時間計算"></p>
+<p>これで時間を付けるメンバーが 2/3 に増えました。
+仕組みを入れただけで状況が改善するとは思っていません。
+残りの 1/3 に対して、どうアプローチしていくかが、
+今後、取り組んでいく課題として残っています。</p>
+<h2 id="redmine-time-entries">redmine-time-entries</h2>
+<p>前職にて「このチケット何時間が掛かっているけど説明に書いてあるゴールとしては、
+こんなに掛からなそうに感じるのだけれど自分の中でどう考えていますか」
+と上長やチームメンバーから聞かれ、
+自分のゴールがぶれていたり、脇道の逸れていたということに気付かされることが何度もありました。</p>
+<p>これらの経験から時間という記録を付けることが、
+感覚ではなく定量的に議論するきっかけとなるということを学びました。</p>
+<p>現職でも、チケットに時間を付けていきましょうという取り組みを少しずつ進めています。
+「時間を付けていきましょう」という認識を合わせただけで時間が付くようになっていくとは、微塵も思っていません。
+何時間付いているではなく、
+毎日コンスタントに時間が記録されているかという観点で「ふりかえり」を実施していきたいと考えました。
+Redmine で作業時間を集計すると、チケットごとの時間が表示されます。</p>
+<p>こういった情報は「ふりかえり」では必要ないので、時間を除去した一覧が欲しいなと思い、
+<a href="https://www.redmine.org/projects/redmine/wiki/Rest_TimeEntries">Rest_TimeEntries</a> を使って、
+自分が欲しいと考えた情報だけを一覧する Web アプリケーションを開発しました。</p>
+<p>アプリケーションは <a href="https://www.python.org/">Python</a> +
+<a href="https://flask.palletsprojects.com/">Flask</a> で書き、
+<a href="https://gunicorn.org/">Gunicorn</a> 経由で起動するようになっており、
+<a href="https://www.docker.com/">Docker</a> でコンテナ化しています。</p>
+<p><a href="https://www.nomadproject.io/">Nomad</a> にサービススケジューラとして登録されており、
+Nomad の管理下で Docker コンテナが起動し、 <a href="https://traefik.io/">Traefik</a> 経由で、
+アプリケーションに接続する構成となっています。</p>
+<p>まだ「ふりかえり」をどう運用していこうかというところまでしかきていません。
+「エスカレーション対応の稼動が7割になっているから4割まで減らせるような取り組みを一緒に考えて試行していこう」とか、
+業務掛け持ちの人には「このチームでの稼動はこれくらいなので週のアウトプットとしてはこのくらいで調整していこう」という定量的なコミュニケーションに発展させていけたらと考えてます。</p>
+<h2 id="redmine-police-officer">redmine-police-officer</h2>
+<p>親子でチケットを管理しているプロジェクトもあります。
+あと一つ子チケットが残った状態で放置されている状態で放置されている親チケット、
+子チケットが全てクローズとなっているがクローズとなっていない親チケットなど
+気になるチケットをいろいろ見掛けました。</p>
+<p>これも人間が警察として頑張ると、その人の頑張りに依存してしまいます。
+気になったチケット構成を全てコード化し洗い出し、 Slack にメンションする仕組みを開発しました。</p>
+<p>アプリケーションは <a href="https://www.python.org/">Python</a> で書きました。
+<a href="https://www.docker.com/">Docker</a> でコンテナ化し、
+<a href="https://www.nomadproject.io/">Nomad</a> にバッチスケジューラとして登録し、
+Nomad の管理下で、日次で Docker コンテナが起動し、 Slack にメンションする構成を考えています。</p>
+<p>プログラムは書かれた通りに動くので、忖度などは一切ありません。
+私が作者だからといって、私に対してだけは警察しないということはなく、
+容赦なく私に対しても警察してきます。
+私が開発したのに、私より賢く動いてくれるものが出来上がりました。</p>
+<p>チームメンバーに共有し、実際に運用しながら調整していこうと考えています。</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="../../posts/ssmjp-advent-calendar-2020-day9/"><i class="fa fa-chevron-circle-left"></i> なぜ「チケット駆動開発」を導入しようと思ったのか</a>
+        </li>
+        
+        
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="../../index.xml">Subscribe </a></h6>
+    </footer>
+</div>
+<script src="../../js/scripts.js"></script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-184310934-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+
+</html>
+

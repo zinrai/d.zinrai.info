@@ -6,10 +6,170 @@
    <description>Recent content on TypeError:</description>
    <generator>Hugo -- gohugo.io</generator>
    <language>ja</language>
-   <lastBuildDate>Wed, 09 Dec 2020 12:14:46 +0900</lastBuildDate>
+   <lastBuildDate>Thu, 10 Dec 2020 10:19:01 +0900</lastBuildDate>
    
        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
    
+   
+     <item>
+       <title>チケット駆動開発の運用にて開発した小さなツール達</title>
+       <link>/posts/redmine-advent-calendar-2020-day10/</link>
+       <pubDate>Thu, 10 Dec 2020 10:19:01 +0900</pubDate>
+       
+       <guid>/posts/redmine-advent-calendar-2020-day10/</guid>
+       <description>&lt;p&gt;&lt;a href=&#34;https://adventar.org/calendars/5392&#34;&gt;Redmine Advent Calendar 2020&lt;/a&gt; 10日目の記事です。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://adventar.org/calendars/5210&#34;&gt;#ssmjp Advent Calendar 2020&lt;/a&gt; で、
+&lt;a href=&#34;https://redmine-japan.org/&#34;&gt;Redmine Japan 2020&lt;/a&gt; にて発表した
+「&lt;a href=&#34;https://speakerdeck.com/zinrai/okr-tidd-case&#34;&gt;チケット駆動開発がまわりはじめるまでの取り組み&lt;/a&gt;」で、
+お話できなかった内容を少しずつテキスト化しています。
+今のところ、チケット駆動開発との出会い、なぜそのマインドセットに至っているのか、
+いまの自分がチケット駆動開発に対して考えていること、
+チケット駆動開発の導入をどう考えたのか、
+なぜチケット駆動開発を導入しようと思ったのか、
+などが書き出せています。よかったら眺めてみてください。&lt;/p&gt;
+&lt;p&gt;毎日、3000字ほど書くということを課されている状態でなかなか大変です。
+途中、予定通りにコンテンツを追加できないことがあるかもしれませんが、
+できるだけ食らい付いていきたいと思っています。&lt;/p&gt;
+&lt;p&gt;今日は、「&lt;a href=&#34;https://speakerdeck.com/zinrai/okr-tidd-case&#34;&gt;チケット駆動開発がまわりはじめるまでの取り組み&lt;/a&gt;」
+を運用していく中で開発した小さなツール達を
+&lt;a href=&#34;https://adventar.org/calendars/5392&#34;&gt;Redmine Advent Calendar 2020&lt;/a&gt;
+の場を借りて紹介していきます。&lt;/p&gt;
+&lt;p&gt;私の整備した &lt;a href=&#34;https://qiita.com/zinrai/items/78fbb2616a6d86af71b2&#34;&gt;HashiCorp Nomad で作るコンテナ実行基盤&lt;/a&gt; の上で動いているものがほとんどです。&lt;/p&gt;
+&lt;h2 id=&#34;project-redmine-backup&#34;&gt;project-redmine-backup&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.redmine.org/&#34;&gt;Redmine&lt;/a&gt; のデータベースは &lt;a href=&#34;https://www.postgresql.org/&#34;&gt;PostgreSQL&lt;/a&gt; を使っています。
+バックアップは大事です。
+&lt;a href=&#34;https://www.postgresql.jp/document/12/html/app-pgdump.html&#34;&gt;pg_dump&lt;/a&gt; コマンドを使いデータベースをバックアップし、
+&lt;a href=&#34;https://rclone.org/&#34;&gt;Rclone&lt;/a&gt; を使い某クラウドストレージにバックアップを転送するシェルスクリプトになっています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://rclone.org/&#34;&gt;Rclone&lt;/a&gt; を使うとクラウドストレージの API と格闘したり、
+API を操作するための処理を書いたりせずに、
+コマンドラインで気軽にクラウドストレージにデータを転送できたり、
+ファイルを何世代残すのかをコマンドラインオプションだけで制御できたりして、
+クラウドストレージへの操作がとても楽です。&lt;/p&gt;
+&lt;p&gt;とても便利に使わせてもらっているので、
+&lt;a href=&#34;https://rclone.org/donate/&#34;&gt;PayPal 経由で寄付&lt;/a&gt; しようとしたのですが、エラーが出て寄付できませんでした。
+誰か、寄付の方法を知っていたら教えて欲しいです。&lt;/p&gt;
+&lt;p&gt;シェルスクリプトは &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; でコンテナ化され、
+&lt;a href=&#34;https://www.nomadproject.io/&#34;&gt;Nomad&lt;/a&gt; にバッチスケジューラとして登録されており、
+Nomad の管理下で1時間おきに Docker コンテナが起動しています。&lt;/p&gt;
+&lt;h2 id=&#34;project-sandbox-restore&#34;&gt;project-sandbox-restore&lt;/h2&gt;
+&lt;p&gt;特定のプロジェクトにおいて &lt;a href=&#34;https://www.redmine.org/projects/redmine/wiki/rest_api&#34;&gt;Redmine API&lt;/a&gt; を使いチケットを作りたいという要望がチームメンバーから上がりました。
+本番稼動している Redmine 環境にてテストしてもらうわけにはいかないので、
+サンドボックス環境を用意し、そこで「自由にテストしてね」というようにしています。&lt;/p&gt;
+&lt;p&gt;サンドボックス環境では、バックアップしているデータベースを使ってカジュアルにリストアできるようにしています。
+うっかり本番環境のデータベースをバックアップと入れ替えてしまわないように、
+サンドボックス環境でしか動かないリストア用のコマンドを開発し提供しています。
+十数行の小さなシェルスクリプトです。
+サンドボックス環境のリストアは、そのコマンド経由で実行してもらっています。&lt;/p&gt;
+&lt;h2 id=&#34;redmine2slack&#34;&gt;redmine2slack&lt;/h2&gt;
+&lt;p&gt;現職では Slack がコミュニケーションの基盤になっています。
+&lt;a href=&#34;https://www.redmine.org/&#34;&gt;Redmine&lt;/a&gt; での活動を演出するため、
+Slack に専用のチャンネルを用意し、
+Redmine の「活動」の Atom を Slack に通知する仕組みを作りました。&lt;/p&gt;
+&lt;p&gt;アプリケーションは &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt; で書き、
+&lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; でコンテナ化されています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.nomadproject.io/&#34;&gt;Nomad&lt;/a&gt; にバッチスケジューラとして登録されており、
+Nomad の管理下で15分おきに Docker コンテナが起動しています。&lt;/p&gt;
+&lt;h2 id=&#34;redmine-today-activity&#34;&gt;redmine-today-activity&lt;/h2&gt;
+&lt;p&gt;現在は、 Redmine での活動を一覧しながら日次のミーティングを行っています。
+アプリケーションを開発しなくても Redmine のカスタムクエリを使えば一覧できるのではないかと思われるかもしれません。
+複数のプロジェクトにまたがったカスタムクエリを Redmine に登録しているユーザーに公開できなかったり、
+私が管理者をしている Redmine 以外にもチームメンバーが起票する Redmine が存在しており、
+それらを全て集計しなければチームメンバーの活動が見えないという状況でした。&lt;/p&gt;
+&lt;p&gt;チームメンバーが利用している Redmine を洗い出し、
+一つの画面で当日の動きが一覧できる Web アプリケーションを開発しました。&lt;/p&gt;
+&lt;p&gt;アプリケーションは &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt; +
+&lt;a href=&#34;https://flask.palletsprojects.com/&#34;&gt;Flask&lt;/a&gt; で書き、
+&lt;a href=&#34;https://gunicorn.org/&#34;&gt;Gunicorn&lt;/a&gt; 経由で起動するようになっており、
+&lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; でコンテナ化しています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.nomadproject.io/&#34;&gt;Nomad&lt;/a&gt; にサービススケジューラとして登録されており、
+Nomad の管理下で Docker コンテナが起動し、 &lt;a href=&#34;https://traefik.io/&#34;&gt;Traefik&lt;/a&gt; 経由で、
+アプリケーションに接続する構成となっています。&lt;/p&gt;
+&lt;h2 id=&#34;project-escala-activiety&#34;&gt;project-escala-activiety&lt;/h2&gt;
+&lt;p&gt;チームに来た問い合せ、アラート対応などを行うためのプロジェクトを用意し運用しています。
+アラート対応は、復旧対応までとしており、恒久対応がある場合は別プロジェクトにて管理します。
+問い合せも回答までに数週間掛かるようなものはほとんどありません。
+このプロジェクトに作られたチケットがクローズされるまでの期間は短かいです。&lt;/p&gt;
+&lt;p&gt;よくチケットが放置されており、治安が良くないなと思ったと同時に、
+これを誰かが警察し続けるのは、その人の頑張りに依存してしまうので、
+チームメンバーにチケットを放置しないことを意識してもらう方向に舵を切りたいなと考えました。&lt;/p&gt;
+&lt;p&gt;最後のチケットの更新日から7日間経過しているクローズしていないチケットを
+Slack にメンション付きで通知することにしました。
+日次のミーティングにてチームメンバーにメンションされたら、
+チケットの状況を確認してステータスの変更またはコメントを追記してくださいと伝え合意を得ました。&lt;/p&gt;
+&lt;p&gt;アプリケーションは &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt; で書き、
+&lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; でコンテナ化されています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.nomadproject.io/&#34;&gt;Nomad&lt;/a&gt; にバッチスケジューラとして登録されており、
+Nomad の管理下で毎日、始業時間に Docker コンテナが起動し、
+該当するチケットを洗い出し、担当者に Slack でメンションしています。&lt;/p&gt;
+&lt;p&gt;仕組みを入れただけですぐに状況が改善されたりはしません。
+同じチケットが毎日メンションされ続けていることに対して、
+切り込んでいかなければならない状況となっています。&lt;/p&gt;
+&lt;h2 id=&#34;時間を計算ボタン&#34;&gt;「時間を計算」ボタン&lt;/h2&gt;
+&lt;p&gt;時間を付けていきましょうとチームで認識は合わせましたが、
+それで時間が付きはじめるとは思っていません。
+実際に redmine-time-entries で集計してみてもチームメンバーの半分は時間が付いていない状態でした。
+認識は合わせたが、どのような心境であるかをヒアリングしたところ、
+「時間の入力が手間で、時間を入力するコストを下げたい」というようなコメントが上がってきました。&lt;/p&gt;
+&lt;p&gt;Redmine Plugin をゴリゴリ書きはじめるのはコスト高いなと思ったので、
+&lt;a href=&#34;https://github.com/onozaty/redmine-view-customize&#34;&gt;Redmine view customize plugin&lt;/a&gt; を使い、
+JavaScript で時間を計算して自動で項目を埋めるボタンを作りました。
+JavaScript とか jQuery とか全然使わないので、数十行書くのに4時間くらい掛かってしまいました。&lt;/p&gt;
+&lt;p&gt;( &lt;a href=&#34;https://github.com/onozaty/redmine-view-customize&#34;&gt;Redmine view customize plugin&lt;/a&gt;
+とても便利に使わせてもらっています。開発者の方ありがとうございます。 )&lt;/p&gt;
+&lt;p&gt;最後にチケットを更新した日時を取得し、
+現在時刻との時間差を計算し作業時間を埋めるという「時間を計算」ボタンを JavaScript にて実装しました。
+最後にチケットを更新した日時を無制限に許容すると、
+とんでもない時間が付いてしまう可能性があるため、
+最後の更新から2時間以上経過している場合は、
+自動では入力せず「手動で入力してね」というメッセージを出すようにしています。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../imgs/time-entries.png&#34; alt=&#34;時間計算&#34;&gt;&lt;/p&gt;
+&lt;p&gt;これで時間を付けるメンバーが 2/3 に増えました。
+仕組みを入れただけで状況が改善するとは思っていません。
+残りの 1/3 に対して、どうアプローチしていくかが、
+今後、取り組んでいく課題として残っています。&lt;/p&gt;
+&lt;h2 id=&#34;redmine-time-entries&#34;&gt;redmine-time-entries&lt;/h2&gt;
+&lt;p&gt;前職にて「このチケット何時間が掛かっているけど説明に書いてあるゴールとしては、
+こんなに掛からなそうに感じるのだけれど自分の中でどう考えていますか」
+と上長やチームメンバーから聞かれ、
+自分のゴールがぶれていたり、脇道の逸れていたということに気付かされることが何度もありました。&lt;/p&gt;
+&lt;p&gt;これらの経験から時間という記録を付けることが、
+感覚ではなく定量的に議論するきっかけとなるということを学びました。&lt;/p&gt;
+&lt;p&gt;現職でも、チケットに時間を付けていきましょうという取り組みを少しずつ進めています。
+「時間を付けていきましょう」という認識を合わせただけで時間が付くようになっていくとは、微塵も思っていません。
+何時間付いているではなく、
+毎日コンスタントに時間が記録されているかという観点で「ふりかえり」を実施していきたいと考えました。
+Redmine で作業時間を集計すると、チケットごとの時間が表示されます。&lt;/p&gt;
+&lt;p&gt;こういった情報は「ふりかえり」では必要ないので、時間を除去した一覧が欲しいなと思い、
+&lt;a href=&#34;https://www.redmine.org/projects/redmine/wiki/Rest_TimeEntries&#34;&gt;Rest_TimeEntries&lt;/a&gt; を使って、
+自分が欲しいと考えた情報だけを一覧する Web アプリケーションを開発しました。&lt;/p&gt;
+&lt;p&gt;アプリケーションは &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt; +
+&lt;a href=&#34;https://flask.palletsprojects.com/&#34;&gt;Flask&lt;/a&gt; で書き、
+&lt;a href=&#34;https://gunicorn.org/&#34;&gt;Gunicorn&lt;/a&gt; 経由で起動するようになっており、
+&lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; でコンテナ化しています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.nomadproject.io/&#34;&gt;Nomad&lt;/a&gt; にサービススケジューラとして登録されており、
+Nomad の管理下で Docker コンテナが起動し、 &lt;a href=&#34;https://traefik.io/&#34;&gt;Traefik&lt;/a&gt; 経由で、
+アプリケーションに接続する構成となっています。&lt;/p&gt;
+&lt;p&gt;まだ「ふりかえり」をどう運用していこうかというところまでしかきていません。
+「エスカレーション対応の稼動が7割になっているから4割まで減らせるような取り組みを一緒に考えて試行していこう」とか、
+業務掛け持ちの人には「このチームでの稼動はこれくらいなので週のアウトプットとしてはこのくらいで調整していこう」という定量的なコミュニケーションに発展させていけたらと考えてます。&lt;/p&gt;
+&lt;h2 id=&#34;redmine-police-officer&#34;&gt;redmine-police-officer&lt;/h2&gt;
+&lt;p&gt;親子でチケットを管理しているプロジェクトもあります。
+あと一つ子チケットが残った状態で放置されている状態で放置されている親チケット、
+子チケットが全てクローズとなっているがクローズとなっていない親チケットなど
+気になるチケットをいろいろ見掛けました。&lt;/p&gt;
+&lt;p&gt;これも人間が警察として頑張ると、その人の頑張りに依存してしまいます。
+気になったチケット構成を全てコード化し洗い出し、 Slack にメンションする仕組みを開発しました。&lt;/p&gt;
+&lt;p&gt;アプリケーションは &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt; で書きました。
+&lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; でコンテナ化し、
+&lt;a href=&#34;https://www.nomadproject.io/&#34;&gt;Nomad&lt;/a&gt; にバッチスケジューラとして登録し、
+Nomad の管理下で、日次で Docker コンテナが起動し、 Slack にメンションする構成を考えています。&lt;/p&gt;
+&lt;p&gt;プログラムは書かれた通りに動くので、忖度などは一切ありません。
+私が作者だからといって、私に対してだけは警察しないということはなく、
+容赦なく私に対しても警察してきます。
+私が開発したのに、私より賢く動いてくれるものが出来上がりました。&lt;/p&gt;
+&lt;p&gt;チームメンバーに共有し、実際に運用しながら調整していこうと考えています。&lt;/p&gt;
+</description>
+     </item>
    
      <item>
        <title>なぜ「チケット駆動開発」を導入しようと思ったのか</title>
