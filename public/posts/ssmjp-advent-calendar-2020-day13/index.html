@@ -1,0 +1,243 @@
+<!doctype html>
+
+<html lang="ja">
+
+<head>
+  <title>なぜ「チケット駆動開発」を導入できそうと思ったのか - TypeError:</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="zinrai" /><meta property="og:title" content="なぜ「チケット駆動開発」を導入できそうと思ったのか" />
+<meta property="og:description" content="#ssmjp Advent Calendar 2020 13日目の記事です。 発表する時間は無かったので、「チケット駆動開発がまわりはじめるまでの取り組み」では、 『「チケット駆動開発」を小さ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/ssmjp-advent-calendar-2020-day13/" />
+<meta property="article:published_time" content="2020-12-13T10:09:43+09:00" />
+<meta property="article:modified_time" content="2020-12-13T10:09:43+09:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="なぜ「チケット駆動開発」を導入できそうと思ったのか"/>
+<meta name="twitter:description" content="#ssmjp Advent Calendar 2020 13日目の記事です。 発表する時間は無かったので、「チケット駆動開発がまわりはじめるまでの取り組み」では、 『「チケット駆動開発」を小さ"/>
+
+<meta name="generator" content="Hugo 0.71.1" />
+    
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="../../css/styles.css" /></head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="../../">TypeError:</a>
+            </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/zinrai" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://twitter.com/zinrai" title="Twitter">
+               <i class="fab fa-twitter fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="../../tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>なぜ「チケット駆動開発」を導入できそうと思ったのか</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2020-12-13T10:09:43&#43;09:00">Dec 13, 2020</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="../../tags/tidd">#tidd</a>
+                
+                    , 
+                    <a href="../../tags/ssmjp">#ssmjp</a>
+                
+                    , 
+                    <a href="../../tags/redmine">#redmine</a>
+                
+            </em>
+        </li>
+        
+
+        <li>5 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    
+
+
+    <p><a href="https://adventar.org/calendars/5210">#ssmjp Advent Calendar 2020</a> 13日目の記事です。</p>
+<p>発表する時間は無かったので、「チケット駆動開発がまわりはじめるまでの取り組み」では、
+『「チケット駆動開発」を小さくはじめていくことが出来そうだなと思った。』
+というスライドを一枚出しただけで、さらっと流しました。</p>
+<p>今日は、どのようなやり取りや背景があり、
+「チケット駆動開発」を小さくはじめていけそうだと思ったのかについて書きました。</p>
+<p>チケット駆動開発がまわりはじめるまでの取り組み</p>
+<p><a href="https://speakerdeck.com/zinrai/okr-tidd-case">https://speakerdeck.com/zinrai/okr-tidd-case</a></p>
+<h2 id="マネージャーとの-1on1">マネージャーとの 1on1</h2>
+<p>現職では、管理職と定期的に 1on1 することになっておりマネージャーと対面でお話する機会がありました。</p>
+<p>1on1 にてマネージャーから「自分の業務を全てチケットにし、
+自分が何をやっているのかをの動きを
+他の人にも見えるようにしている働き方はとても良いと思っています」と言われました。
+一人チケット駆動開発がマネージャーに届いたことを確認できました。</p>
+<p>日次のチームミーティングにてカルチャーショックを受けたことを伝えると、
+「チームメンバーが何をやっているのか追い掛けにくい状態のため、
+メンバーの状況を自分の中にインプットしてするような
+役割も兼ねてチームミーティングを実施しているが、
+自分自身の負荷が高いなと感じている」と言われ、
+負荷が高そうだなと思っていたことは、実際にそうであるということがわかりました。</p>
+<p>進めていることを確認する手段がチームメンバーごとに違っていたり、
+全く無い状況についてどう考えているのか聞いてみると、
+「各々が使っている手段をそれぞれ追い掛けなければならずとても大変で、
+全く情報が出てこないメンバーには個別に打ち合わせの機会を設定しなければならず、
+とにかく時間をとられていて大変な状態になっている」と言われ、
+チームメンバーをまとめる人の負荷が尋常ではなく高そうだということを感じました。</p>
+<p>「自分に対して行っているチケットでの動きをチームに展開していけると良いなと思っています」
+ともマネージャーから言われました。</p>
+<p>マネージャーは現状に課題を持っているということが確認でき、
+チケット駆動開発の導入を推進した場合、
+マネージャーからの後押しがありそうで、
+一人相撲にならなそうだなと思いました。</p>
+<h2 id="チームでの課題感">チームでの課題感</h2>
+<p>私の一人チケット駆動開発を見ていたチームメンバーの一人が、
+「今まで何度もチームでのタスクを管理しようという試みはあったが、
+例えば Trello を使うというような手段が先行してしまい目的を見失ったり、
+Trello を使ったとしても運用ルールがなく、
+主導していく立場の人もいないため、誰もやらなくなりゴミ箱化することを繰り返している」
+と言われ、全員ではないかもしれませんが、
+チームが自分達のタスクを管理していきたいという思いを持ってそうだということを感じました。</p>
+<p>メンバー間で連携しなければならない部分にて
+「誰が、何を、どこまでやっているのか」見えず、
+都度集まって状況を確認しなければならないことが大変だと感じているメンバーもいました。</p>
+<h2 id="相性が良さそうと感じる人がいた">相性が良さそうと感じる人がいた</h2>
+<p>入社初日のチームミーティングにて、
+いつまでに、何をして、どこまで出来ているのかが聞きとれない中、
+今日は具体的に何をやって、どこまで出来ていて、
+次の動きとしてどのようなことをしようと考えているという情報発信しているメンバーが一人だけいました。
+他のメンバーの雰囲気に流されることなく、私も雰囲気を感じ取れるような情報発信をしていることに感動しました。</p>
+<p>私の入社初日だけそうだったわけではなく、その人のチームミーティング時の情報発信はいつも同じような調子でした。
+自分の進めていることを具体化できていて、
+次に進めることもイメージできているということがチームミーティングから聞き取れ、
+この人の動きは、そのままチケットにマッピングできそうだなと感じました。</p>
+<p>前職で、新卒社員にチケット駆動開発の研修を行ったときに、
+一人の新卒社員が、予備校時代に学んだ思考方法とチケット駆動開発がリンクしたらしく、
+あっという間に「チケット駆動開発」を自分のもにしていく様子を目の当たりにしました。
+「チケット駆動開発によって、自分の動きをより洗練させることができました。
+ありがとうございます。プラベートでも Redmine 使うようになりました。」
+と言われた経験があり、同じようなことが起きるのではないかという感覚を持ちました。</p>
+<h2 id="前向きそうな人がいた">前向きそうな人がいた</h2>
+<p>チームでの私の役割は、
+これからローンチするサービスの監視基盤を整備することでした。
+監視システムを用意しただけでは監視は始まりません。
+監視項目を定義し、監視システムに設定していく必要があります。
+私だけで完結する内容ではありません。
+監視の対象を担当しているメンバーに監視項目を洗い出してもらう必要があります。</p>
+<p>試しに一人チケット駆動開発している Redmine に監視項目を洗い出してもらうチケットを作成し、
+どのくらい前向きに動いてもらえるかを確認してみることにしました。
+チームメンバーの6人に対してチケットを作ってみてチームミーティングで共有した結果、
+マネージャー(手も動かしている)ともう一人からチケットに対しての反応がありました。
+どちらもチケットから自分の意図を読み取ってくれ、
+こういった意図で、こう進めると良い感じですかと聞いてくれました。
+チケットで作業を進めていくことに前向きそうな人が2人はいるということを確認できました。</p>
+<h2 id="なんだかいけそうな気がした">なんだかいけそうな気がした</h2>
+<p>マネージャー、
+チケット駆動開発を前向きにとらえてくれるメンバーが一人、
+チケット駆動開発と相性が良さそうなメンバーが一人の合計3人がいれば、
+小さくチケット駆動開発をはじめられるのではないかと考えました。</p>
+<p>全員ではないかもしれないが、タスクを管理していきたいとは思っていることは確認できたので、
+タスクがどのようなものであるかのインプット、 Redmine の運用ルールを整備するところから
+はじめていけば、進めていけるのではないかと思いました。</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="../../posts/ssmjp-advent-calendar-2020-day12/"><i class="fa fa-chevron-circle-left"></i> 一人チケット駆動開発</a>
+        </li>
+        
+        
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="../../index.xml">Subscribe </a></h6>
+    </footer>
+</div>
+<script src="../../js/scripts.js"></script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-184310934-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+
+</html>
+
