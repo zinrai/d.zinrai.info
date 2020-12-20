@@ -12,7 +12,7 @@
    
    
      <item>
-       <title>エスカレーション対応のチケット駆動開発 後編</title>
+       <title>エスカレーション対応のチケット駆動開発 中編</title>
        <link>/posts/ssmjp-advent-calendar-2020-day17/</link>
        <pubDate>Thu, 17 Dec 2020 13:11:45 +0900</pubDate>
        
@@ -25,7 +25,8 @@
 &lt;p&gt;「 &lt;a href=&#34;../ssmjp-advent-calendar-2020-day16&#34;&gt;エスカレーション対応のチケット駆動開発 前編&lt;/a&gt; 」では、
 「チームにくるエスカレーション」が、どのようなモチベーションではじまり、
 どのような状況を観測し、どのような戦略を考えたかについて書きました。&lt;/p&gt;
-&lt;p&gt;後編では、具体的にどのようなルールを用意し、進めていったかについて書きました。&lt;/p&gt;
+&lt;p&gt;中編では、具体的にどのようなルールを用意し、
+どのくらいのペースで巻き込むメンバーを増やしていったかについて書きました。&lt;/p&gt;
 &lt;p&gt;チケット駆動開発がまわりはじめるまでの取り組み&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://speakerdeck.com/zinrai/okr-tidd-case&#34;&gt;https://speakerdeck.com/zinrai/okr-tidd-case&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;小さくはじめる&#34;&gt;小さくはじめる&lt;/h2&gt;
@@ -143,7 +144,6 @@
 &lt;p&gt;9回目の週次ミーティングにて、
 参加しているメンバーにて運用がまわりはじめているという認識が合ったので、
 問い合せ、アラートに対応しているメンバー全員を巻き込むことを決めました。&lt;/p&gt;
-&lt;p&gt;( 途中&amp;hellip; )&lt;/p&gt;
 </description>
      </item>
    
@@ -161,7 +161,7 @@
 &lt;p&gt;今日は、「チームにくるエスカレーション」が、
 どのようなモチベーションではじまり、
 どのような状況を観測し、どのような戦略を考えたのかについて書きました。
-書いていると結構なボリュームになったので、前後編に分けました。&lt;/p&gt;
+書いていると結構なボリュームになったので、前編、中編、後編に分けました。&lt;/p&gt;
 &lt;p&gt;チケット駆動開発がまわりはじめるまでの取り組み&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://speakerdeck.com/zinrai/okr-tidd-case&#34;&gt;https://speakerdeck.com/zinrai/okr-tidd-case&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;モチーベーション&#34;&gt;モチーベーション&lt;/h2&gt;
