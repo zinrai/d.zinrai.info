@@ -1,0 +1,289 @@
+<!doctype html>
+
+<html lang="ja">
+
+<head>
+  <title>エスカレーション対応のチケット駆動開発 後編 - TypeError:</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="zinrai" /><meta property="og:title" content="エスカレーション対応のチケット駆動開発 後編" />
+<meta property="og:description" content="#ssmjp Advent Calendar 2020 17日目の記事です。 お話する時間は無かったので、 「チケット駆動開発がまわりはじめるまでの取り組み」では、 「誰が」「何をするか」「何を" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/ssmjp-advent-calendar-2020-day17/" />
+<meta property="article:published_time" content="2020-12-17T13:11:45+09:00" />
+<meta property="article:modified_time" content="2020-12-17T13:11:45+09:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="エスカレーション対応のチケット駆動開発 後編"/>
+<meta name="twitter:description" content="#ssmjp Advent Calendar 2020 17日目の記事です。 お話する時間は無かったので、 「チケット駆動開発がまわりはじめるまでの取り組み」では、 「誰が」「何をするか」「何を"/>
+
+<meta name="generator" content="Hugo 0.71.1" />
+    
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="../../css/styles.css" /></head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="../../">TypeError:</a>
+            </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/zinrai" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://twitter.com/zinrai" title="Twitter">
+               <i class="fab fa-twitter fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="../../tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>エスカレーション対応のチケット駆動開発 後編</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2020-12-17T13:11:45&#43;09:00">Dec 17, 2020</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="../../tags/tidd">#tidd</a>
+                
+                    , 
+                    <a href="../../tags/ssmjp">#ssmjp</a>
+                
+                    , 
+                    <a href="../../tags/redmine">#redmine</a>
+                
+            </em>
+        </li>
+        
+
+        <li>6 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    
+
+
+    <p><a href="https://adventar.org/calendars/5210">#ssmjp Advent Calendar 2020</a> 17日目の記事です。</p>
+<p>お話する時間は無かったので、
+「チケット駆動開発がまわりはじめるまでの取り組み」では、
+「誰が」「何をするか」「何をしているか」「どこまで出来ているか」が
+少しずつチケットとして見えるようになってきたとだけ書きました。</p>
+<p>「 <a href="../ssmjp-advent-calendar-2020-day16">エスカレーション対応のチケット駆動開発 前編</a> 」では、
+「チームにくるエスカレーション」が、どのようなモチベーションではじまり、
+どのような状況を観測し、どのような戦略を考えたかについて書きました。</p>
+<p>後編では、具体的にどのようなルールを用意し、進めていったかについて書きました。</p>
+<p>チケット駆動開発がまわりはじめるまでの取り組み</p>
+<p><a href="https://speakerdeck.com/zinrai/okr-tidd-case">https://speakerdeck.com/zinrai/okr-tidd-case</a></p>
+<h2 id="小さくはじめる">小さくはじめる</h2>
+<p>「 <a href="../ssmjp-advent-calendar-2020-day16">エスカレーション対応のチケット駆動開発 前編</a> 」にて、
+声を上げてくれた2名のチームメンバーを巻き込んで、
+問い合せ、アラート対応の「チケット駆動開発」がはじまりました。</p>
+<h3 id="ヒアリング">ヒアリング</h3>
+<p>「チケット駆動開発」のための運用ルールを整備するためにはするためには、
+自分が観測した状況よりも、より詳細を知っておく必要があります。</p>
+<p>巻き込んだメンバーに対して、自分達の把握している範囲でかまわないので、
+問い合せやアラートを受けている窓口、
+対応の流れ、対応完了を相手にどのように通知しているのか、
+参加するメンバーの思いなどをヒアリングしました。</p>
+<p>参加するメンバーの思いとして、下記のようなことが上がってきて、
+自分が観測し、考えていたことと同じようなことを参加者も考えていることがわかりました。</p>
+<ul>
+<li>誰が対応しているのかがわかりにくいことはよくある</li>
+<li>誰か対応していると思っていたら、誰も対応していなかったことがよくある</li>
+<li>自分が着手していたら、他の人も着手していたことがある</li>
+<li>受けた結果、他の人が対応する必要があったりする</li>
+<li>「誰が」対応しているのかという状況が Redmine で確認できるという状態が第一歩だと思っている</li>
+<li>チームでの経験は少ないため、自分一人で受けたものを解決まで持ってけることは少ない</li>
+<li>対応したものに対して、ここまではやった、この先について助言または対応をお願いしますということを見える形にできるとよいなと思っている</li>
+<li>エスカレーションの回答には含まれない、チーム内での対応経緯のようなものを蓄積し、検索できるようにすることで、自分の対応できることを増やしていきたい</li>
+</ul>
+<h3 id="運用ルールの作成">運用ルールの作成</h3>
+<p>ヒアリングした内容から運用ルールを作成していきます。</p>
+<h4 id="対応宣言">対応宣言</h4>
+<p>対応が被ってしまわないように、
+今から自分が対応するということを相手に伝える必要があると考え、
+それぞれの窓口に対しての宣言方法を決めました。</p>
+<ul>
+<li>メーリングリスト
+<ul>
+<li>チームで利用している Slack チャンネルにメールの件名と対応を宣言する旨をコメントする</li>
+</ul>
+</li>
+<li>Slack チャンネル
+<ul>
+<li>該当のコメントに返信またはリアクションする</li>
+</ul>
+</li>
+<li>依頼システム
+<ul>
+<li>該当の依頼にコメントする</li>
+</ul>
+</li>
+</ul>
+<h4 id="チケット作成">チケット作成</h4>
+<p>問い合せやアラートが来たときに、
+チケット化するための入力項目が多いと、
+面倒臭がられてチケット化されない可能性があります。
+対応が発生したときに、
+ほとんど考えることなくチケット化できるようにしたいと考え、
+下記だけをチケット化するために埋める必須の項目としました。</p>
+<ul>
+<li>題名
+<ul>
+<li>問題点を題名として短かく書く</li>
+<li>題名を付けるのに3分悩んだ場合は、エスカレーションの件名を利用する</li>
+</ul>
+</li>
+<li>説明
+<ul>
+<li>「起点」「対応」「回答」をテンプレートとして内容を埋める</li>
+<li>チケットを作るときは起点となった問い合せ、アラートの内容を「起点」に書き出すだけでよい</li>
+<li>「対応」「回答」はチケットをクローズするときにまとめればよい</li>
+</ul>
+</li>
+<li>担当者</li>
+</ul>
+<h4 id="対応開始の宣言">対応開始の宣言</h4>
+<p>問い合せてきた相手に対して、これから対応をここで進めます、
+チームメンバーに、これからこのアラートに対して、
+このチケットで進めていきますということを見えるようにするため、
+各窓口に対して、チケットのリンクを返信することを決めました。</p>
+<h3 id="認識合わせ">認識合わせ</h3>
+<p>運用ルール、目標などを参加メンバーと認識合わせしました。</p>
+<p>運用ルールについての反応は、
+「読んだ感じ違和感はなく、実際に運用してみて出てきた違和感をフィードバックします」でした。</p>
+<ul>
+<li>「対応が個人に閉じている」を「チケット駆動開発」によって、「誰が何に対応しているのか見えるようにし、ナレッジの蓄積していく」を目標とする</li>
+<li>週次でフィードバックを受ける機会を用意し、運用ルールは「チケット駆動開発」するメンバーに合うように調整する</li>
+<li>自分が取った問い合せ、アラート対応をチケット化する</li>
+<li>自分が取ったが、対応できそうにない場合に供えて、対応を引き継ぐであろうチームメンバーには、チケットの担当者になる可能性がありますと共有しておく</li>
+</ul>
+<h3 id="チームメンバーへの共有">チームメンバーへの共有</h3>
+<p>「これから、問い合せやアラート対応をチケット駆動開発していきます。
+参加メンバーのみがチケット化することになりますが、
+参加メンバーが対応できなかった場合は、
+チケットの担当者となる場合があることを覚えておいてください。」
+とチームミーティングにて、チームメンバーに共有しました。</p>
+<h3 id="週次のミーティング">週次のミーティング</h3>
+<p>以下をキーワードに運用ルールをまわしてみた所感をフィードバックしてもらっていた。</p>
+<ul>
+<li>よかったこと</li>
+<li>できていないと感じること</li>
+<li>自身の行動にていまいちだと感じていること</li>
+<li>困っていること</li>
+</ul>
+<h2 id="参加メンバーを追加する">参加メンバーを追加する</h2>
+<p>初期メンバーとの週次のミーティングを5回行ったところで、
+いまのメンバーでは、運用がまわりはじめているという認識が合ったので、
+初期メンバーと対応している内容が被っているメンバーを新たに2名追加することに決めました。</p>
+<p>5回目の週次ミーティングを行った、次の週の週次ミーティングに新たなメンバーを追加し、
+初期メンバーとどのような会議体を実施しているのか、
+この「チケット駆動開発」にて目標としていること、運用ルールについてのインプットを行い、
+「以降、自分が取る問い合せ、アラートは運用ルールに従いチケット化し、
+週次のミーティングにてフィードバックをお願いします」という認識を合わせました。</p>
+<h2 id="チームメンバーを全員巻き込む">チームメンバーを全員巻き込む</h2>
+<p>週次のミーティングは全部で9回実施し、
+ここまでに3ヶ月の期間を要しました。
+追加した2名のメンバーを混じえてのミーティングは4回実施し、
+運用ルールが大きく変わるようなことはなく、思ったよりもうまくまわっていました。</p>
+<p>9回目の週次ミーティングにて、
+参加しているメンバーにて運用がまわりはじめているという認識が合ったので、
+問い合せ、アラートに対応しているメンバー全員を巻き込むことを決めました。</p>
+<p>( 途中&hellip; )</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="../../posts/ssmjp-advent-calendar-2020-day16/"><i class="fa fa-chevron-circle-left"></i> エスカレーション対応のチケット駆動開発 前編</a>
+        </li>
+        
+        
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="../../index.xml">Subscribe </a></h6>
+    </footer>
+</div>
+<script src="../../js/scripts.js"></script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-184310934-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+
+</html>
+
