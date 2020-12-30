@@ -38,7 +38,7 @@ https://speakerdeck.com/zinrai/okr-tidd-case
 * [エスカレーション対応のチケット駆動開発 前編](../ssmjp-advent-calendar-2020-day16)
 * [エスカレーション対応のチケット駆動開発 中編](../ssmjp-advent-calendar-2020-day17)
 * [エスカレーション対応のチケット駆動開発 後編](../ssmjp-advent-calendar-2020-day18)
-* エスカレーション対応のチケット駆動開発 ふりかえり
+* [エスカレーション対応のチケット駆動開発 ふりかえり](../ssmjp-advent-calendar-2020-day19)
 * [ベンダーへの問い合せのチケット駆動開発](../ssmjp-advent-calendar-2020-day21)
 * チケット駆動開発を使った人の受け入れ
 * 「チケット駆動開発」を導入しての振り返り
