@@ -40,15 +40,6 @@ https://speakerdeck.com/zinrai/okr-tidd-case
 * [エスカレーション対応のチケット駆動開発 後編](../ssmjp-advent-calendar-2020-day18)
 * [エスカレーション対応のチケット駆動開発 ふりかえり](../ssmjp-advent-calendar-2020-day19)
 * [ベンダーへの問い合せのチケット駆動開発](../ssmjp-advent-calendar-2020-day21)
-* チケット駆動開発を使った人の受け入れ
-* 「チケット駆動開発」を導入しての振り返り
-	* 成果と課題
-	* 課題を解決するアプローチ
-* OKR の運用
-	* OKR の設定
-	* OKR とチケット駆動開発の組み合わせ
-	* OKR に近づくためのプロセス
-	* OKR ふりかえり
-	* OKR を運用してみての振り返り
-	* 2020年度第3四半期 OKR
-* チームビルディングのこれから
+* [チケット駆動開発を使った人の受け入れ](../ssmjp-advent-calendar-2020-day22)
+* [「チケット駆動開発」を導入しての振り返り](../ssmjp-advent-calendar-2020-day23)
+* [「チケット駆動開発」のこれから](../ssmjp-advent-calendar-2020-day25)
