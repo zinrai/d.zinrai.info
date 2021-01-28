@@ -1,0 +1,256 @@
+<!doctype html>
+
+<html lang="ja">
+
+<head>
+  <title>チケット駆動開発を使った人の受け入れ 前編 - TypeError:</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="zinrai" /><meta property="og:title" content="チケット駆動開発を使った人の受け入れ 前編" />
+<meta property="og:description" content="#ssmjp Advent Calendar 2020 22日目の記事です。 お話する時間は無かったので、 「チケット駆動開発がまわりはじめるまでの取り組み」では、 「誰が」「何をするか」「何を" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/ssmjp-advent-calendar-2020-day22/" />
+<meta property="article:published_time" content="2020-12-22T13:15:27+09:00" />
+<meta property="article:modified_time" content="2020-12-22T13:15:27+09:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="チケット駆動開発を使った人の受け入れ 前編"/>
+<meta name="twitter:description" content="#ssmjp Advent Calendar 2020 22日目の記事です。 お話する時間は無かったので、 「チケット駆動開発がまわりはじめるまでの取り組み」では、 「誰が」「何をするか」「何を"/>
+
+<meta name="generator" content="Hugo 0.80.0" />
+    
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="../../css/styles.css" /></head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="../../">TypeError:</a>
+            </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/zinrai" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://twitter.com/zinrai" title="Twitter">
+               <i class="fab fa-twitter fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="../../tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>チケット駆動開発を使った人の受け入れ 前編</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2020-12-22T13:15:27&#43;09:00">Dec 22, 2020</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="../../tags/tidd">#tidd</a>
+                
+                    , 
+                    <a href="../../tags/ssmjp">#ssmjp</a>
+                
+                    , 
+                    <a href="../../tags/redmine">#redmine</a>
+                
+            </em>
+        </li>
+        
+
+        <li>6 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    
+
+
+    <p><a href="https://adventar.org/calendars/5210">#ssmjp Advent Calendar 2020</a> 22日目の記事です。</p>
+<p>お話する時間は無かったので、
+「チケット駆動開発がまわりはじめるまでの取り組み」では、
+「誰が」「何をするか」「何をしているか」「どこまで出来ているか」が
+少しずつチケットとして見えるようになってきたとだけ書きました。</p>
+<p>今回は、チケット駆動開発を使い新たなメンバーをチームに受け入れたお話について書きました。
+書いていると結構なボリュームになったので、前後編に分けることにしました。
+前半は、人を受け入れることになったきっかけ、人を受け入れるために自分が何を考えたのかについて書いています。</p>
+<p>チケット駆動開発がまわりはじめるまでの取り組み</p>
+<p><a href="https://speakerdeck.com/zinrai/okr-tidd-case">https://speakerdeck.com/zinrai/okr-tidd-case</a></p>
+<h2 id="きっかけ">きっかけ</h2>
+<p><a href="../ssmjp-advent-calendar-2020-day14">チケット駆動開発をチームメンバーに展開する 前編</a>
+の区切りに差し掛かっていたタイミングでのある日のチームミーティングにて、
+マネージャーから「チームに人を受け入れる話が上がっている」という話を共有されました。</p>
+<p>詳細を聞いてみると以下のようなことが聞き取れました。</p>
+<ul>
+<li>マネージャーが集うミーティングにて、他チームのメンバーでスキルのミスマッチが起きていることを共有された</li>
+<li>チームにハマっていないだけかもしれないため、他のチームでの活躍を模索してもらえないかと言われた</li>
+<li>そうは言われても、忙しくて人を受け入れている余裕はない</li>
+</ul>
+<p>入社してから、ここまで9ヶ月、どのタイミングを切り取っても「忙しい」を耳にしていました。
+人を受け入れることが難しい状況の解像度をもっと上げていかなければ、
+「忙しい」で思考停止している状態が続いていくのだろうなと感じました。</p>
+<p>「チケット駆動開発」を使った人の受け入れ方の実績を作り、
+「忙しい」で思考停止して周りもそれに同調するような雰囲気を打開していきたいと考えました。</p>
+<p><a href="../ssmjp-advent-calendar-2020-day3">「チケット駆動開発」との出会い</a> にて書いたように、
+自分自身、何年もくすぶっていましたが、縁や機会に恵まれここまできています。
+弊社の面接を突破してきた人が、スキルのミスマッチなどと言われ、くすぶっていて、
+それを打開するきっかけになりそうな場を用意してもらえないのはおかしいと考えました。</p>
+<p>これまで縁や機会を作ってきてもらい助けれらた身として、
+今度は私が、誰かに縁や機会を提供する番になったのだと考え、行動しなければという使命感にかられました。</p>
+<p>チームメンバーの「誰が」「何を」をやっているのか見えないことによって、
+「試しに ○○ さんのこれやってみてもったら」というような
+コミュニケーションがチームに生まれないというところも、
+人を受け入れることが難しい要因の一つなのではないかと思っていました。</p>
+<p><a href="../ssmjp-advent-calendar-2020-day6">チケット駆動開発に対する自身の考え 前編</a> より、
+自分が取り組んでいることはもちろん記憶に留めておきたくないので、もちろん「チケット駆動開発」しています。
+自分が取り組まなければと考えていることも記憶に留めておきたくないので、全てチケット化していました。</p>
+<p>「私は、取り組まなければと考えていることも全てチケットにしています。
+これらのチケットをネタにして、私が人を受け入れを主導します。」
+とマネージャーに宣言し、「チケット駆動開発」を使った人の受け入れがはじまりました。</p>
+<p>( チームに受け入れた方は、以降 S さんと呼びます。 )</p>
+<h2 id="自身の決めごと">自身の決めごと</h2>
+<p>チームに人を受け入れることを主導していくにあたり、
+自分の中でどのように進めていくのかとうことを整理しました。</p>
+<h3 id="前評判はどうでもよい">前評判はどうでもよい</h3>
+<p>このままやり続けるの辛いが原動力になり、
+私のように行動していく人ばかりではないと思います。
+チームの雰囲気に馴染めなかっただけかもしれないです。
+オンボーディングに失敗している可能性も考えられます。
+その評価を受けることになった要因などいくらでも思い付きます。</p>
+<p>私は、仕事で Web アプリケーションを開発していたときは散々な評価でした。
+インフラエンジニアをやるようになってからは、
+なんとかやれているのでないかと思っています。</p>
+<p>いまのチームにスキルがマッチしていないという評価が、
+受け入れ先でも同じ結果になるかどうかはわかりません。
+環境、やることが変われば評価も変わることがあるという体験があるため、
+受け入れた人がどうであったかを判断するのは、
+実際に一緒にやってみたときであると考えています。</p>
+<h3 id="立ち位置を確立できるような業務をやってもらう">立ち位置を確立できるような業務をやってもらう</h3>
+<p>ISP にいきつくまで、期待された成果が出せないために、
+チームの中で自分の立ち位置を確立することができずにクビになり続けていました。</p>
+<p>ISP にいきついてからは、サービスのリプレイス、
+サービスのサーバーインフラを整備するなどの成果を出し、
+現職では、アプリケーションをコンテナで実行する基盤、
+メトリクスを管理・監視する基盤を整備するという成果を出し、
+この人ならば、こういったことを進めてくれるだろうというような
+立ち位置を確立できたのかなと思っています。</p>
+<p>自身の体験から、
+必要だが誰も手を付けていない、必要だがやり抜かれていない業務を進めてもらい、
+「このことは、この人に聞くのが一番」というような立ち位置を提供できたらと考えました。</p>
+<h3 id="一つずつ確実に成果を積み上げていってもらう">一つずつ確実に成果を積み上げていってもらう</h3>
+<p>チームに入ってきたばかりの段階では、
+何ができて、どういった成果を出していける人なのかわかりません。</p>
+<p>一つ一つの取り組んでいくことに対して、
+検証、実装、ドキュメンテーション、
+情報共有までのサイクルを成果として積み上げることで、
+この人は、こういった成果を出していける人なのだということを印象付け、
+それがチームメンバーの信頼を得ていくことに繋がると考えました。</p>
+<p>一つ一つの業務に対して目に見える成果を確実に積み上げてもらい、
+最終的にチームメンバーからの信頼を勝ち得て欲しいと思いました。</p>
+<h3 id="構成管理しているレイヤーを下から積み上げ理解してもらう">構成管理しているレイヤーを下から積み上げ理解してもらう</h3>
+<p>サーバーの払出しは Terraform 、ミドルウェアのセットアップは Ansible 、
+アプリケーションの実行は Nomad といったように構成管理するレイヤーを分けた構成を私が整備しました。</p>
+<p>それぞれの構成管理のレイヤーにて、手が付けられていないこと残っていました。
+下のレイヤーから、手が付けられていないことを一つ一つ解決していってもらうことにより、
+チームでどのようにサーバーをセットアップしたり、
+アプリケーションをデプロイしているのか理解し、
+さらにその先にある業務に対して、自律的に手を動かせるようになってもらえたらと考えました。</p>
+<p>きっかけ、自分の考えから具体的にどう行動し、結果どうであったかは後半に続きます。</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="../../posts/ssmjp-advent-calendar-2020-day21/"><i class="fa fa-chevron-circle-left"></i> ベンダーへの問い合せのチケット駆動開発</a>
+        </li>
+        
+        
+        <li>
+            <a href="../../posts/ssmjp-advent-calendar-2020-day23/">チケット駆動開発を使った人の受け入れ 後編 <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="../../index.xml">Subscribe </a></h6>
+    </footer>
+</div>
+<script src="../../js/scripts.js"></script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-184310934-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+
+</html>
+
