@@ -1,0 +1,286 @@
+<!doctype html>
+
+<html lang="ja">
+
+<head>
+  <title>「チケット駆動開発」を導入しての成果と課題 - TypeError:</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="zinrai" /><meta property="og:title" content="「チケット駆動開発」を導入しての成果と課題" />
+<meta property="og:description" content="#ssmjp Advent Calendar 2020 25日目の記事です。 お話する時間は無かったので、 「チケット駆動開発がまわりはじめるまでの取り組み」では、 導入しての成果と課題をさらっ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/ssmjp-advent-calendar-2020-day25/" />
+<meta property="article:published_time" content="2020-12-25T13:16:39+09:00" />
+<meta property="article:modified_time" content="2020-12-25T13:16:39+09:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="「チケット駆動開発」を導入しての成果と課題"/>
+<meta name="twitter:description" content="#ssmjp Advent Calendar 2020 25日目の記事です。 お話する時間は無かったので、 「チケット駆動開発がまわりはじめるまでの取り組み」では、 導入しての成果と課題をさらっ"/>
+
+<meta name="generator" content="Hugo 0.80.0" />
+    
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="../../css/styles.css" /></head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="../../">TypeError:</a>
+            </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/zinrai" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://twitter.com/zinrai" title="Twitter">
+               <i class="fab fa-twitter fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="../../tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="../../about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>「チケット駆動開発」を導入しての成果と課題</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2020-12-25T13:16:39&#43;09:00">Dec 25, 2020</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="../../tags/tidd">#tidd</a>
+                
+                    , 
+                    <a href="../../tags/ssmjp">#ssmjp</a>
+                
+                    , 
+                    <a href="../../tags/redmine">#redmine</a>
+                
+            </em>
+        </li>
+        
+
+        <li>5 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    
+
+
+    <p><a href="https://adventar.org/calendars/5210">#ssmjp Advent Calendar 2020</a> 25日目の記事です。</p>
+<p>お話する時間は無かったので、
+「チケット駆動開発がまわりはじめるまでの取り組み」では、
+導入しての成果と課題をさらっと共有するだけに留めました。</p>
+<p>今回は、「チケット駆動開発」を導入しての成果、課題、
+課題を解決するために利用した仕組みについて書きました。</p>
+<p>チケット駆動開発がまわりはじめるまでの取り組み</p>
+<p><a href="https://speakerdeck.com/zinrai/okr-tidd-case">https://speakerdeck.com/zinrai/okr-tidd-case</a></p>
+<h2 id="成果">成果</h2>
+<p>「誰が」「何を」「どこまで」やっているのかが誰かの頭の中に留まり続けていて、
+誰からも観測できないという状態を「チケット駆動開発」によって解消することができました。</p>
+<ul>
+<li><a href="../ssmjp-advent-calendar-2020-day14">チケット駆動開発をチームメンバーに展開する 前編</a></li>
+<li><a href="../ssmjp-advent-calendar-2020-day15">チケット駆動開発をチームメンバーに展開する 後編</a></li>
+</ul>
+<p>より、日々の開発は、親子の構造でチケット管理されるようになりました。</p>
+<p>チームメンバーの複数名で進めていく業務に対して、
+作業を進める前に親チケットのゴールの認識を合わせ、
+どの部分を誰が担当していくことになるのかをチケットで表現し、
+動けるようになったことにより、
+「そういえば、あの件どうなりましたか」というコミュニケーションほぼ無くなりました。</p>
+<ul>
+<li><a href="../ssmjp-advent-calendar-2020-day16">エスカレーション対応のチケット駆動開発 前編</a></li>
+<li><a href="../ssmjp-advent-calendar-2020-day17">エスカレーション対応のチケット駆動開発 中編</a></li>
+<li><a href="../ssmjp-advent-calendar-2020-day18">エスカレーション対応のチケット駆動開発 後編</a></li>
+<li><a href="../ssmjp-advent-calendar-2020-day19">エスカレーション対応のチケット駆動開発 ふりかえり</a></li>
+</ul>
+<p>より、日々の問い合わせ対応がチケットで管理されるようになりました。</p>
+<ul>
+<li><a href="../ssmjp-advent-calendar-2020-day21">ベンダーへの問い合せのチケット駆動開発</a></li>
+</ul>
+<p>より、ベンダーの問い合わせがチケットで管理されるようになりました。</p>
+<ul>
+<li><a href="../ssmjp-advent-calendar-2020-day22">チケット駆動開発を使った人の受け入れ 前編</a></li>
+<li><a href="../ssmjp-advent-calendar-2020-day23">チケット駆動開発を使った人の受け入れ 後編</a></li>
+</ul>
+<p>より、受け入れた方の動きはチケットで管理され誰でも観測できました。</p>
+<p>「 <a href="../redmine-advent-calendar-2020-day10">チケット駆動開発の運用にて開発した小さなツール達</a> 」
+の redmine-today-activity を使い日次のチームミーティングを行う形をとるとで、
+チケットをベースにその日の行動をチームメンバーに共有できるようになりました。</p>
+<p>チームでは、本番環境に対する変更管理の仕組みがまわっていました。
+本番環境に対して、どのような作業を実施するのか、
+具体的なオペレーション、切り戻しのオペレーションをテキスト化し、
+チーム内でのレビューを受け承認され、作業が実施される流れとなっていました。</p>
+<p>レビューする側が、自分がどのレビューをまだ実施していないのか管理できておらず、
+レビューを依頼した側も動きが観測できないという状態になっていました。
+レビューの依頼をチケットで管理するようにし、
+カテゴリを使ってレビュー待ちのチケットを集計できるようにすることで、
+レビュー側は自分がどのレビューのボールを持っているのか、
+レビューを依頼した側は、レビューの動きを観測できるようになりました。</p>
+<p>「その作業は、どのチケットでやっていますか」
+「チケット作ってないので、いまから作ります」
+というようなチケットをベースにしたコミュニケーションが行われるようになりました。</p>
+<p>私が、コミットログ、プルリクエストに必ず、
+チケット番号を入れていたのを他のメンバーも真似てくれるようになりました。
+何故そのコミット、プルリクエストをするに至ったのか、
+いきなり本人にあれこれ聞かなくても、まずはチケットを参照すればよいという流れができました。</p>
+<h2 id="課題">課題</h2>
+<ul>
+<li><a href="../ssmjp-advent-calendar-2020-day14">チケット駆動開発をチームメンバーに展開する 前編</a></li>
+<li><a href="../ssmjp-advent-calendar-2020-day15">チケット駆動開発をチームメンバーに展開する 後編</a></li>
+</ul>
+<p>を半年間まわしてみて、
+前の一週間、次の一週間という範囲の動きしかとらえられず、
+数ヶ月先のゴールを見据えた動きはできないなという感触を得ました。</p>
+<p>人事評価のシステムにてメンバーに割り当てられた役割が、
+日々の業務としてチケットになっているというような状態で、
+チームとしてありたい姿を共有し、
+進んでいくというような一体感はまだ無いなという感じを受けました。</p>
+<p>自分の中で「チケット駆動開発」にて管理していくものは、
+「誰が」「何を」「いつまでに」という情報であり、
+「チームとしての一体感」というものは「チケット駆動開発」で解消するものではなく、
+別の仕組みをもってなんとかしていくものではないかと思いました。</p>
+<p>「チームとして数ヶ月先のゴールを見据えて進んでいける仕組みを整備する」
+を目的に設定し、チケット駆動開発と組み合わせた新たな仕組みを導入していこうと考えました。</p>
+<h2 id="課題を解決しようと導入した仕組み">課題を解決しようと導入した仕組み</h2>
+<p>「チームで目指す方向を示すことができ、具体的な行動をチケットに落とし込めるようにしたい」
+を設定した目的を達成するために欲しい仕組みとし、以下の観点で仕組みを選定しました。</p>
+<h3 id="チームで目指すゴールを設定する">チームで目指すゴールを設定する</h3>
+<p>誰かから与えられた目指すものではなく、
+チームメンバーで話し合い認識を合わせたゴールを設定することで、
+メンバーに当事者意識をもってもらうための仕組みが欲しいと考えました。</p>
+<h3 id="チケット駆動開発と連携できる">チケット駆動開発と連携できる</h3>
+<p>チケット駆動開発により「誰が」「何を」「どこまで」が見えるようになったので、
+チームで目指すゴールから「チケット駆動開発」に落とし込めそうな仕組みが欲しいと考えました。</p>
+<h3 id="方法論を覚えるだけでおなかいっぱいにならない">方法論を覚えるだけでおなかいっぱいにならない</h3>
+<p>世の中には様々な方法論があります。
+だた、その方法論を使うために、事前のインプットが結構必要で、
+「導入する側も一緒にやっていく側も方法論を覚えるだけでおなかいっぱい」
+な状態は避けたいと思っていました。</p>
+<p>「誰が」「何を「いつまでに」は「チケット駆動開発」が担うので、
+「チームとしての一体感」を出すための仕組みが欲しいと考えました。</p>
+<p>上記の観点から OKR を採用し導入しました。
+OKR の話を書くとなると結構なボリュームになるため、
+2021年の Advent Calendar にて書けたらと思っています。
+今回は、参照した書籍の紹介に留めておきます。</p>
+<ul>
+<li>最短最速で目標を達成するOKRマネジメント入門
+<ul>
+<li><a href="https://kanki-pub.co.jp/pub/book/details/9784761273996">https://kanki-pub.co.jp/pub/book/details/9784761273996</a></li>
+</ul>
+</li>
+<li>OKR（オーケーアール）
+<ul>
+<li><a href="https://www.nikkeibp.co.jp/atclpubmkt/book/18/P55640/">https://www.nikkeibp.co.jp/atclpubmkt/book/18/P55640/</a></li>
+</ul>
+</li>
+<li>本気でゴールを達成したい人とチームのためのＯＫＲ
+<ul>
+<li><a href="https://d21.co.jp/book/detail/978-4-7993-2461-5">https://d21.co.jp/book/detail/978-4-7993-2461-5</a></li>
+</ul>
+</li>
+</ul>
+<p>Advent Calender での公開は、今回で最後になります。</p>
+<p>Advent Calendar に収まらなかった、
+「チケット駆動開発」を導入しての
+事前に自分の考えた戦略はどうであったかの「ふりかえり」は
+別途記事にしたいと思っています。</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="../../posts/ssmjp-advent-calendar-2020-day23/"><i class="fa fa-chevron-circle-left"></i> チケット駆動開発を使った人の受け入れ 後編</a>
+        </li>
+        
+        
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="../../index.xml">Subscribe </a></h6>
+    </footer>
+</div>
+<script src="../../js/scripts.js"></script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-184310934-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+
+</html>
+

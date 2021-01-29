@@ -6,10 +6,137 @@
    <description>Recent content in Tags on TypeError:</description>
    <generator>Hugo -- gohugo.io</generator>
    <language>ja</language>
-   <lastBuildDate>Wed, 23 Dec 2020 13:15:27 +0900</lastBuildDate>
+   <lastBuildDate>Fri, 25 Dec 2020 13:16:39 +0900</lastBuildDate>
    
        <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
    
+   
+     <item>
+       <title>「チケット駆動開発」を導入しての成果と課題</title>
+       <link>/posts/ssmjp-advent-calendar-2020-day25/</link>
+       <pubDate>Fri, 25 Dec 2020 13:16:39 +0900</pubDate>
+       
+       <guid>/posts/ssmjp-advent-calendar-2020-day25/</guid>
+       <description>&lt;p&gt;&lt;a href=&#34;https://adventar.org/calendars/5210&#34;&gt;#ssmjp Advent Calendar 2020&lt;/a&gt; 25日目の記事です。&lt;/p&gt;
+&lt;p&gt;お話する時間は無かったので、
+「チケット駆動開発がまわりはじめるまでの取り組み」では、
+導入しての成果と課題をさらっと共有するだけに留めました。&lt;/p&gt;
+&lt;p&gt;今回は、「チケット駆動開発」を導入しての成果、課題、
+課題を解決するために利用した仕組みについて書きました。&lt;/p&gt;
+&lt;p&gt;チケット駆動開発がまわりはじめるまでの取り組み&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://speakerdeck.com/zinrai/okr-tidd-case&#34;&gt;https://speakerdeck.com/zinrai/okr-tidd-case&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;成果&#34;&gt;成果&lt;/h2&gt;
+&lt;p&gt;「誰が」「何を」「どこまで」やっているのかが誰かの頭の中に留まり続けていて、
+誰からも観測できないという状態を「チケット駆動開発」によって解消することができました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day14&#34;&gt;チケット駆動開発をチームメンバーに展開する 前編&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day15&#34;&gt;チケット駆動開発をチームメンバーに展開する 後編&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;より、日々の開発は、親子の構造でチケット管理されるようになりました。&lt;/p&gt;
+&lt;p&gt;チームメンバーの複数名で進めていく業務に対して、
+作業を進める前に親チケットのゴールの認識を合わせ、
+どの部分を誰が担当していくことになるのかをチケットで表現し、
+動けるようになったことにより、
+「そういえば、あの件どうなりましたか」というコミュニケーションほぼ無くなりました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day16&#34;&gt;エスカレーション対応のチケット駆動開発 前編&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day17&#34;&gt;エスカレーション対応のチケット駆動開発 中編&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day18&#34;&gt;エスカレーション対応のチケット駆動開発 後編&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day19&#34;&gt;エスカレーション対応のチケット駆動開発 ふりかえり&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;より、日々の問い合わせ対応がチケットで管理されるようになりました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day21&#34;&gt;ベンダーへの問い合せのチケット駆動開発&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;より、ベンダーの問い合わせがチケットで管理されるようになりました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day22&#34;&gt;チケット駆動開発を使った人の受け入れ 前編&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day23&#34;&gt;チケット駆動開発を使った人の受け入れ 後編&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;より、受け入れた方の動きはチケットで管理され誰でも観測できました。&lt;/p&gt;
+&lt;p&gt;「 &lt;a href=&#34;../redmine-advent-calendar-2020-day10&#34;&gt;チケット駆動開発の運用にて開発した小さなツール達&lt;/a&gt; 」
+の redmine-today-activity を使い日次のチームミーティングを行う形をとるとで、
+チケットをベースにその日の行動をチームメンバーに共有できるようになりました。&lt;/p&gt;
+&lt;p&gt;チームでは、本番環境に対する変更管理の仕組みがまわっていました。
+本番環境に対して、どのような作業を実施するのか、
+具体的なオペレーション、切り戻しのオペレーションをテキスト化し、
+チーム内でのレビューを受け承認され、作業が実施される流れとなっていました。&lt;/p&gt;
+&lt;p&gt;レビューする側が、自分がどのレビューをまだ実施していないのか管理できておらず、
+レビューを依頼した側も動きが観測できないという状態になっていました。
+レビューの依頼をチケットで管理するようにし、
+カテゴリを使ってレビュー待ちのチケットを集計できるようにすることで、
+レビュー側は自分がどのレビューのボールを持っているのか、
+レビューを依頼した側は、レビューの動きを観測できるようになりました。&lt;/p&gt;
+&lt;p&gt;「その作業は、どのチケットでやっていますか」
+「チケット作ってないので、いまから作ります」
+というようなチケットをベースにしたコミュニケーションが行われるようになりました。&lt;/p&gt;
+&lt;p&gt;私が、コミットログ、プルリクエストに必ず、
+チケット番号を入れていたのを他のメンバーも真似てくれるようになりました。
+何故そのコミット、プルリクエストをするに至ったのか、
+いきなり本人にあれこれ聞かなくても、まずはチケットを参照すればよいという流れができました。&lt;/p&gt;
+&lt;h2 id=&#34;課題&#34;&gt;課題&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day14&#34;&gt;チケット駆動開発をチームメンバーに展開する 前編&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day15&#34;&gt;チケット駆動開発をチームメンバーに展開する 後編&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;を半年間まわしてみて、
+前の一週間、次の一週間という範囲の動きしかとらえられず、
+数ヶ月先のゴールを見据えた動きはできないなという感触を得ました。&lt;/p&gt;
+&lt;p&gt;人事評価のシステムにてメンバーに割り当てられた役割が、
+日々の業務としてチケットになっているというような状態で、
+チームとしてありたい姿を共有し、
+進んでいくというような一体感はまだ無いなという感じを受けました。&lt;/p&gt;
+&lt;p&gt;自分の中で「チケット駆動開発」にて管理していくものは、
+「誰が」「何を」「いつまでに」という情報であり、
+「チームとしての一体感」というものは「チケット駆動開発」で解消するものではなく、
+別の仕組みをもってなんとかしていくものではないかと思いました。&lt;/p&gt;
+&lt;p&gt;「チームとして数ヶ月先のゴールを見据えて進んでいける仕組みを整備する」
+を目的に設定し、チケット駆動開発と組み合わせた新たな仕組みを導入していこうと考えました。&lt;/p&gt;
+&lt;h2 id=&#34;課題を解決しようと導入した仕組み&#34;&gt;課題を解決しようと導入した仕組み&lt;/h2&gt;
+&lt;p&gt;「チームで目指す方向を示すことができ、具体的な行動をチケットに落とし込めるようにしたい」
+を設定した目的を達成するために欲しい仕組みとし、以下の観点で仕組みを選定しました。&lt;/p&gt;
+&lt;h3 id=&#34;チームで目指すゴールを設定する&#34;&gt;チームで目指すゴールを設定する&lt;/h3&gt;
+&lt;p&gt;誰かから与えられた目指すものではなく、
+チームメンバーで話し合い認識を合わせたゴールを設定することで、
+メンバーに当事者意識をもってもらうための仕組みが欲しいと考えました。&lt;/p&gt;
+&lt;h3 id=&#34;チケット駆動開発と連携できる&#34;&gt;チケット駆動開発と連携できる&lt;/h3&gt;
+&lt;p&gt;チケット駆動開発により「誰が」「何を」「どこまで」が見えるようになったので、
+チームで目指すゴールから「チケット駆動開発」に落とし込めそうな仕組みが欲しいと考えました。&lt;/p&gt;
+&lt;h3 id=&#34;方法論を覚えるだけでおなかいっぱいにならない&#34;&gt;方法論を覚えるだけでおなかいっぱいにならない&lt;/h3&gt;
+&lt;p&gt;世の中には様々な方法論があります。
+だた、その方法論を使うために、事前のインプットが結構必要で、
+「導入する側も一緒にやっていく側も方法論を覚えるだけでおなかいっぱい」
+な状態は避けたいと思っていました。&lt;/p&gt;
+&lt;p&gt;「誰が」「何を「いつまでに」は「チケット駆動開発」が担うので、
+「チームとしての一体感」を出すための仕組みが欲しいと考えました。&lt;/p&gt;
+&lt;p&gt;上記の観点から OKR を採用し導入しました。
+OKR の話を書くとなると結構なボリュームになるため、
+2021年の Advent Calendar にて書けたらと思っています。
+今回は、参照した書籍の紹介に留めておきます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最短最速で目標を達成するOKRマネジメント入門
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kanki-pub.co.jp/pub/book/details/9784761273996&#34;&gt;https://kanki-pub.co.jp/pub/book/details/9784761273996&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;OKR（オーケーアール）
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.nikkeibp.co.jp/atclpubmkt/book/18/P55640/&#34;&gt;https://www.nikkeibp.co.jp/atclpubmkt/book/18/P55640/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;本気でゴールを達成したい人とチームのためのＯＫＲ
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://d21.co.jp/book/detail/978-4-7993-2461-5&#34;&gt;https://d21.co.jp/book/detail/978-4-7993-2461-5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Advent Calender での公開は、今回で最後になります。&lt;/p&gt;
+&lt;p&gt;Advent Calendar に収まらなかった、
+「チケット駆動開発」を導入しての
+事前に自分の考えた戦略はどうであったかの「ふりかえり」は
+別途記事にしたいと思っています。&lt;/p&gt;
+</description>
+     </item>
    
      <item>
        <title>チケット駆動開発を使った人の受け入れ 後編</title>
@@ -1998,7 +2125,7 @@ AIX の特定のソフトウェアのバージョンが低く、
 与えられた23分間では触れることができませんでした。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://adventar.org/calendars/5210&#34;&gt;#ssmjp Advent Calendar 2020&lt;/a&gt;
 という場を借りて、お話できなかった内容を少しずつテキスト化していきます。
-次回から、下記に書いてあるようなことを書く予定でいます。&lt;/p&gt;
+以下、 Advent Calendar にて書くコンテンツとなります。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day3&#34;&gt;「チケット駆動開発」との出会い&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day4&#34;&gt;マインドセットに至るまでの話&lt;/a&gt;&lt;/li&gt;
@@ -2017,7 +2144,7 @@ AIX の特定のソフトウェアのバージョンが低く、
 &lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day21&#34;&gt;ベンダーへの問い合せのチケット駆動開発&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day22&#34;&gt;チケット駆動開発を使った人の受け入れ 前編&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day23&#34;&gt;チケット駆動開発を使った人の受け入れ 後編&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day25&#34;&gt;「チケット駆動開発」を導入しての振り返り&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../ssmjp-advent-calendar-2020-day25&#34;&gt;「チケット駆動開発」を導入しての成果と課題&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
      </item>
