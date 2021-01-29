@@ -23,7 +23,7 @@ https://speakerdeck.com/zinrai/okr-tidd-case
 
 [#ssmjp Advent Calendar 2020](https://adventar.org/calendars/5210)
 という場を借りて、お話できなかった内容を少しずつテキスト化していきます。
-次回から、下記に書いてあるようなことを書く予定でいます。
+以下、 Advent Calendar にて書くコンテンツとなります。
 
 * [「チケット駆動開発」との出会い](../ssmjp-advent-calendar-2020-day3)
 * [マインドセットに至るまでの話](../ssmjp-advent-calendar-2020-day4)
@@ -42,4 +42,4 @@ https://speakerdeck.com/zinrai/okr-tidd-case
 * [ベンダーへの問い合せのチケット駆動開発](../ssmjp-advent-calendar-2020-day21)
 * [チケット駆動開発を使った人の受け入れ 前編](../ssmjp-advent-calendar-2020-day22)
 * [チケット駆動開発を使った人の受け入れ 後編](../ssmjp-advent-calendar-2020-day23)
-* [「チケット駆動開発」を導入しての振り返り](../ssmjp-advent-calendar-2020-day25)
+* [「チケット駆動開発」を導入しての成果と課題](../ssmjp-advent-calendar-2020-day25)
