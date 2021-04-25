@@ -1,7 +1,6 @@
 +++
 title = "エスカレーション対応のチケット駆動開発 ふりかえり"
 date = 2020-12-19T14:50:25+09:00
-tags = ["tidd", "ssmjp", "redmine"]
 +++
 
 [#ssmjp Advent Calendar 2020](https://adventar.org/calendars/5210) 19日目の記事です。

@@ -1,7 +1,6 @@
 ---
 title: "ベンダーへの問い合せのチケット駆動開発"
 date: 2020-12-21T13:14:38+09:00
-tags: ["tidd", "ssmjp", "redmine"]
 ---
 
 [#ssmjp Advent Calendar 2020](https://adventar.org/calendars/5210) 21日目の記事です。

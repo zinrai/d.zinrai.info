@@ -1,7 +1,6 @@
 ---
 title: "「チケット駆動開発」を導入しての成果と課題"
 date: 2020-12-25T13:16:39+09:00
-tags: ["tidd", "ssmjp", "redmine"]
 ---
 
 [#ssmjp Advent Calendar 2020](https://adventar.org/calendars/5210) 25日目の記事です。

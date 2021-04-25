@@ -1,7 +1,6 @@
 ---
 title: "チケット駆動開発をチームメンバーに展開する 前編"
 date: 2020-12-14T12:10:31+09:00
-tags: ["tidd", "ssmjp", "redmine"]
 ---
 
 [#ssmjp Advent Calendar 2020](https://adventar.org/calendars/5210) 14日目の記事です。

@@ -1,7 +1,6 @@
 ---
 title: "「チケット駆動開発がまわりはじめるまでの取り組み」のテキスト化"
 date: 2020-12-02T00:04:52+09:00
-tags: ["tidd", "ssmjp", "redmine"]
 ---
 
 [#ssmjp Advent Calendar 2020](https://adventar.org/calendars/5210) 2日目の記事です。

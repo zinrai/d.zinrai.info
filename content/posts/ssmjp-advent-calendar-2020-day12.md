@@ -1,7 +1,6 @@
 ---
 title: "一人チケット駆動開発"
 date: 2020-12-12T10:08:57+09:00
-tags: ["tidd", "ssmjp", "redmine"]
 ---
 
 [#ssmjp Advent Calendar 2020](https://adventar.org/calendars/5210) 12日目の記事です。

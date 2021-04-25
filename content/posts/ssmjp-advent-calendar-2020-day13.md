@@ -1,7 +1,6 @@
 ---
 title: "なぜ「チケット駆動開発」を導入できそうと思ったのか"
 date: 2020-12-13T10:09:43+09:00
-tags: ["tidd", "ssmjp", "redmine"]
 ---
 
 [#ssmjp Advent Calendar 2020](https://adventar.org/calendars/5210) 13日目の記事です。

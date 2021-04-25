@@ -1,7 +1,6 @@
 ---
 title: "エスカレーション対応のチケット駆動開発 後編"
 date: 2020-12-18T13:14:07+09:00
-tags: ["tidd", "ssmjp", "redmine"]
 ---
 
 [#ssmjp Advent Calendar 2020](https://adventar.org/calendars/5210) 18日目の記事です。

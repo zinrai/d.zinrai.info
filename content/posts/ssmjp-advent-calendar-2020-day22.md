@@ -1,7 +1,6 @@
 ---
 title: "チケット駆動開発を使った人の受け入れ 前編"
 date: 2020-12-22T13:15:27+09:00
-tags: ["tidd", "ssmjp", "redmine"]
 ---
 
 [#ssmjp Advent Calendar 2020](https://adventar.org/calendars/5210) 22日目の記事です。

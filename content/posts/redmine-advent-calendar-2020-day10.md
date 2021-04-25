@@ -1,7 +1,6 @@
 +++
 title = "チケット駆動開発の運用にて開発した小さなツール達"
 date = 2020-12-10T10:19:01+09:00
-tags = ['redmine', 'tidd']
 +++
 
 [Redmine Advent Calendar 2020](https://adventar.org/calendars/5392) 10日目の記事です。

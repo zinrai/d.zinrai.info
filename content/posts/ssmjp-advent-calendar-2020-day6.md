@@ -1,7 +1,6 @@
 ---
 title: "チケット駆動開発に対する自身の考え 前編"
 date: 2020-12-06T12:08:29+09:00
-tags: ["tidd", "ssmjp", "redmine"]
 ---
 
 [#ssmjp Advent Calendar 2020](https://adventar.org/calendars/5210) 6日目の記事です。
