@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TypeError:</title>
-    <link>/</link>
-    <description>Recent content on TypeError:</description>
+    <title>Okr-tidd-cases on TypeError:</title>
+    <link>/okr-tidd-case/</link>
+    <description>Recent content in Okr-tidd-cases on TypeError:</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 25 Dec 2020 13:16:39 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Dec 2020 13:16:39 +0900</lastBuildDate><atom:link href="/okr-tidd-case/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>「チケット駆動開発」を導入しての成果と課題</title>
       <link>/okr-tidd-case/results-introducing-tidd/</link>
@@ -116,15 +116,6 @@
     </item>
     
     <item>
-      <title>チケット駆動開発の運用にて開発した小さなツール達</title>
-      <link>/posts/tidd-tools/</link>
-      <pubDate>Thu, 10 Dec 2020 10:19:01 +0900</pubDate>
-      
-      <guid>/posts/tidd-tools/</guid>
-      <description>Redmine Advent Calendar 2020 10日目の記事です。 #ssmjp Advent Calendar 2020 で、 Redmine Japan 2020 にて発表した 「チケット駆動開発がまわりはじめるまでの取り組み」で、 お話できなかった内容を少しず</description>
-    </item>
-    
-    <item>
       <title>なぜ「チケット駆動開発」を導入しようと思ったのか</title>
       <link>/okr-tidd-case/tidd-motivation/</link>
       <pubDate>Wed, 09 Dec 2020 12:14:46 +0900</pubDate>
@@ -176,15 +167,6 @@
       
       <guid>/okr-tidd-case/encount-tidd/</guid>
       <description>#ssmjp Advent Calendar 2020 3日目の記事です。 「チケット駆動開発がまわりはじめるまでの取り組み」の 「マインドセット」についてテキスト化するつもりで書いていたので</description>
-    </item>
-    
-    <item>
-      <title>チケット駆動開発がまわりはじめるまでの取り組み</title>
-      <link>/posts/okr-tidd-case/</link>
-      <pubDate>Wed, 02 Dec 2020 00:04:52 +0900</pubDate>
-      
-      <guid>/posts/okr-tidd-case/</guid>
-      <description>2020年9月に「 Redmine Japan 2020 」にて 「チケット駆動開発がまわりはじめるまでの取り組み」というタイトルで発表させていただきました。 Redmine Japan 2020 https://redmine-japan.org/ チケット駆</description>
     </item>
     
   </channel>

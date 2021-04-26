@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    
+    
+    <title>TypeError: | 一人チケット駆動開発</title>
+    <style type="text/css">
+  body {
+    font-size: 150%;
+    font-family: muli,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+  }
+</style>
+
+</head>
+<body><p><a href="#nav-menu">Menu</a></p>
+
+
+
+<h1>一人チケット駆動開発</h1>
+
+
+  </p>
+
+
+
+  
+  
+
+  <p>Dec 12, 2020</p>
+
+
+
+
+<p><a href="https://adventar.org/calendars/5210">#ssmjp Advent Calendar 2020</a> 12日目の記事です。</p>
+<p>「チケット駆動開発」として見せられるものがなかったので、
+まずは「一人でチケット駆動開発する」は、 Redmine Japan 2020 でお話し、
+<a href="../../okr-tidd-case/strategy-tidd">「チケット駆動開発」導入の戦略</a> にも書きました。</p>
+<p>今日は、お話できなかった具体的にどのように一人チケット駆動開発していたのかについてのかについて書きました。</p>
+<p>チケット駆動開発がまわりはじめるまでの取り組み</p>
+<p><a href="https://speakerdeck.com/zinrai/okr-tidd-case">https://speakerdeck.com/zinrai/okr-tidd-case</a></p>
+<h2 id="手元に-redmine-を構築した">手元に Redmine を構築した</h2>
+<p>「チケット駆動開発」に自分がどれだけ助けれら、
+どれだけ強力なツールであるかを私は知っています。
+Redmine や「チケット駆動開発」がないから、
+ここではやらないという考えは一切ありません。
+Redmine と「チケット駆動開発」がないならば自分で用意するまでです。</p>
+<p>入社初日のチームミーティングにて、
+Redmine も「チケット駆動開発」がないことはわかりました。
+事前に手配してもらっていたセカンダリのノートパソコンを
+入社初日に速攻で Debian GNU/Linux ( sid ) に入れ替えました。
+入社初日は週末だったので、
+次の週のはじめに Debian に入れ替えたノートパソコンに Redmine をセットアップし、
+「チケット駆動開発」を開始しました。
+これで「やること」「決めること」を覚えなくてよい環境が用意でき、脳への負荷が減りました。</p>
+<h2 id="redmine-を立てられる環境を探し構築した">Redmine を立てられる環境を探し、構築した</h2>
+<p>手元の環境で Redmine を動かすのは一時的な対応で、
+社内からアクセスできる場所に Redmine をセットアップして、
+自分の動きを誰からでも見える状態することを次の目標としていました。
+入社したばかりで、どこにどのようなリソースがあって、
+どのように使えばよいかが全然わかりません。</p>
+<p>まずはチームで使われているツールをキャッチアップしていけば、
+サーバーを立てられる場所に辿り着くだろうと考え、
+社内のドキュメントやコードを「チケット駆動開発」しながらインプットしていくことにしました。
+インプットしている中で Terraform のコードを見付けました。
+Terraform Configuration を書き Redmine 用のサーバーを払出し、
+Ansible Playbook を書いて適用し、社内から誰でも参照できる Redmine を用意することができました。</p>
+<p>なぜそうしてしまったのか思い出せませんが、
+手元の Redmine のデータをマイグレーションせずに、
+セットアップした Redmine を使いはじめてしまいました。
+なぜ手元の Redmine のデータをここにマイグレーションしなかったのかと今でも悔やんでいます。
+次に同じような状況になった場合は、一度冷静になってマイグレーションしようと思っています。</p>
+<h2 id="チケット駆動開発しているものを見せながら状況を説明する">チケット駆動開発しているものを見せながら状況を説明する</h2>
+<p>私は「チケット駆動開発」がよいものであるということを信じています。
+だた、それを誰の目にも触れないところでやってしまっては、気にも留めてもらえません。
+このようなやり方があるということを自ら発信していかなければ、誰かの目には留まりません。
+手元の Redmine で「チケット駆動開発」していては、
+やり方が気になった人が、私のやっていることを見ることができないので、
+早々に社内から誰でもアクセスできる環境に Redmine を構築しました。</p>
+<p>いま何を進めているのか、どこまで何が出来ていて、
+どの地点で、何が残っているのかなどの状況を聞かれたときは、
+必ず「チケット駆動開発」している Redmine を見せながら説明するようにしていました。
+今までずっとこのような動きをしていたので、やることにストレスはありません。
+むしろ Redmine なしで状況を説明するほうが自分への負荷が高くてストレスです。</p>
+<p>全ては、自分への負荷を減らすためにやっていることで、
+誰かが気にかけてくれたらもうけもん、くらいの気持ちでやっていました。</p>
+
+
+
+
+
+
+
+<p><a name="nav-menu" id="nav-menu"><strong>Site menu</strong></a></p>
+
+<ul>
+    
+    <li>
+      <a href="../../">
+      
+      ホーム
+      </a>
+    </li>
+    
+    <li>
+      <a href="../../posts/okr-tidd-case">
+      
+      チケット駆動開発がまわりはじめるまでの取り組み
+      </a>
+    </li>
+    
+    <li>
+      <a href="../../posts/tidd-tools">
+      
+      チケット駆動開発の運用にて開発した小さなツール達
+      </a>
+    </li>
+    
+</ul>
+
+<p><a href="#">Back to top</a></p>
+</body>
+</html>
