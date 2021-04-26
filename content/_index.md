@@ -2,7 +2,7 @@
 title: "TypeError:"
 ---
 
-同じドメインで運用していた 2014 年以前のブログ は、
+2014 まで、こちらのドメインで運用していたブログ は、
 [こちら](https://github.com/zinrai/debris-d.zinrai.info) に残しています。
 
 * [Twitter](https://twitter.com/zinrai)

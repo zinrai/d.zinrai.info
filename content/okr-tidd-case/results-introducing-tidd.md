@@ -21,8 +21,8 @@ https://speakerdeck.com/zinrai/okr-tidd-case
 「誰が」「何を」「どこまで」やっているのかが誰かの頭の中に留まり続けていて、
 誰からも観測できないという状態を「チケット駆動開発」によって解消することができました。
 
-* [チケット駆動開発をチームメンバーに展開する 前編](../ssmjp-advent-calendar-2020-day14)
-* [チケット駆動開発をチームメンバーに展開する 後編](../ssmjp-advent-calendar-2020-day15)
+* [チケット駆動開発をチームメンバーに展開する 前編](/okr-tidd-case/introduce-tidd-team-part1)
+* [チケット駆動開発をチームメンバーに展開する 後編](/okr-tidd-case/introduce-tidd-team-part2)
 
 より、日々の開発は、親子の構造でチケット管理されるようになりました。
 
@@ -32,23 +32,23 @@ https://speakerdeck.com/zinrai/okr-tidd-case
 動けるようになったことにより、
 「そういえば、あの件どうなりましたか」というコミュニケーションほぼ無くなりました。
 
-* [エスカレーション対応のチケット駆動開発 前編](../ssmjp-advent-calendar-2020-day16)
-* [エスカレーション対応のチケット駆動開発 中編](../ssmjp-advent-calendar-2020-day17)
-* [エスカレーション対応のチケット駆動開発 後編](../ssmjp-advent-calendar-2020-day18)
-* [エスカレーション対応のチケット駆動開発 ふりかえり](../ssmjp-advent-calendar-2020-day19)
+* [エスカレーション対応のチケット駆動開発 前編](/okr-tidd-case/escalation-tidd-part1)
+* [エスカレーション対応のチケット駆動開発 中編](/okr-tidd-case/escalation-tidd-part2)
+* [エスカレーション対応のチケット駆動開発 後編](/okr-tidd-case/escalation-tidd-part3)
+* [エスカレーション対応のチケット駆動開発 ふりかえり](/okr-tidd-case/retrospective-escalation-tidd)
 
 より、日々の問い合わせ対応がチケットで管理されるようになりました。
 
-* [ベンダーへの問い合せのチケット駆動開発](../ssmjp-advent-calendar-2020-day21)
+* [ベンダーへの問い合せのチケット駆動開発](/okr-tidd-case/vendor-tidd)
 
 より、ベンダーの問い合わせがチケットで管理されるようになりました。
 
-* [チケット駆動開発を使った人の受け入れ 前編](../ssmjp-advent-calendar-2020-day22)
-* [チケット駆動開発を使った人の受け入れ 後編](../ssmjp-advent-calendar-2020-day23)
+* [チケット駆動開発を使った人の受け入れ 前編](/okr-tidd-case/onbording-tidd-part1)
+* [チケット駆動開発を使った人の受け入れ 後編](/okr-tidd-case/onbording-tidd-part2)
 
 より、受け入れた方の動きはチケットで管理され誰でも観測できました。
 
-「 [チケット駆動開発の運用にて開発した小さなツール達](../redmine-advent-calendar-2020-day10) 」
+「 [チケット駆動開発の運用にて開発した小さなツール達](/posts/tidd-tools) 」
 の redmine-today-activity を使い日次のチームミーティングを行う形をとるとで、
 チケットをベースにその日の行動をチームメンバーに共有できるようになりました。
 
@@ -75,8 +75,8 @@ https://speakerdeck.com/zinrai/okr-tidd-case
 
 ## 課題
 
-* [チケット駆動開発をチームメンバーに展開する 前編](../ssmjp-advent-calendar-2020-day14)
-* [チケット駆動開発をチームメンバーに展開する 後編](../ssmjp-advent-calendar-2020-day15)
+* [チケット駆動開発をチームメンバーに展開する 前編](/okr-tidd-case/introduce-tidd-team-part1)
+* [チケット駆動開発をチームメンバーに展開する 後編](/okr-tidd-case/introduce-tidd-team-part2)
 
 を半年間まわしてみて、
 前の一週間、次の一週間という範囲の動きしかとらえられず、
