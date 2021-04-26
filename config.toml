@@ -3,16 +3,20 @@ relativeurls = true
 languageCode = "ja"
 hasCJKLanguage = true
 title = "TypeError:"
-theme = "hugo-kiera"
+theme = "accessible-minimalism-hugo-theme"
 googleAnalytics = "UA-184310934-2"
 
-[author]
-    name = "zinrai"
-    github = "zinrai"
-    twitter = "zinrai"
+[[menu.main]]
+  name = "ホーム"
+  url = "/"
+  weight = 1
 
 [[menu.main]]
-  identifier = "tags"
-  name = "Tags"
-  url = "/tags"
-  weight = 1
+  name = "チケット駆動開発がまわりはじめるまでの取り組み"
+  url = "/posts/okr-tidd-case"
+  weight = 2
+
+[[menu.main]]
+  name = "チケット駆動開発の運用にて開発した小さなツール達"
+  url = "/posts/tidd-tools"
+  weight = 3
