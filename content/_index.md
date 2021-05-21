@@ -6,9 +6,10 @@ title: "TypeError:"
 [こちら](https://github.com/zinrai/debris-d.zinrai.info) に残しています。
 
 * [Twitter](https://twitter.com/zinrai)
+* [Speaker Deck](https://speakerdeck.com/zinrai)
 * [Github](https://github.com/zinrai)
 * [Bitbucket](https://bitbucket.org/zinrai)
-* [Blog](http://d.zinrai.net/public)
+* [Blog](http://d.zinrai.net/)
 
 ## 発表
 
