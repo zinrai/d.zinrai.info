@@ -13,6 +13,7 @@ title: "TypeError:"
 
 ## 発表
 
+* [第20回redmine.tokyo勉強会](https://redmine-tokyo.connpass.com/event/210332/)
 * [REDMINE JAPAN 2020](https://redmine-japan.org/time-table#a11)
 * [Ansible Night in Tokyo 2019.07](https://ansible-users.connpass.com/event/135965/)
 * [JANOG BoF & LT Night #2](https://www.janog.gr.jp/meeting/bof-lt-night-2/)
