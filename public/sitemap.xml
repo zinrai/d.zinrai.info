@@ -1,128 +1,78 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/okr-tidd-case/</loc>
     <lastmod>2020-12-25T13:16:39+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/</loc>
     <lastmod>2020-12-25T13:16:39+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/results-introducing-tidd/</loc>
     <lastmod>2020-12-25T13:16:39+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/onbording-tidd-part2/</loc>
     <lastmod>2020-12-23T13:15:27+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/onbording-tidd-part1/</loc>
     <lastmod>2020-12-22T13:15:27+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/vendor-tidd/</loc>
     <lastmod>2020-12-21T13:14:38+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/retrospective-escalation-tidd/</loc>
     <lastmod>2020-12-19T14:50:25+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/escalation-tidd-part3/</loc>
     <lastmod>2020-12-18T13:14:07+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/escalation-tidd-part2/</loc>
     <lastmod>2020-12-17T13:11:45+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/escalation-tidd-part1/</loc>
     <lastmod>2020-12-16T13:11:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/introduce-tidd-team-part2/</loc>
     <lastmod>2020-12-15T13:11:08+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/introduce-tidd-team-part1/</loc>
     <lastmod>2020-12-14T12:10:31+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/possibility-introducing-tidd/</loc>
     <lastmod>2020-12-13T10:09:43+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/tidd-only-one-person/</loc>
     <lastmod>2020-12-12T10:08:57+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/posts/</loc>
     <lastmod>2020-12-10T10:19:01+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/posts/tidd-tools/</loc>
     <lastmod>2020-12-10T10:19:01+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/tidd-motivation/</loc>
     <lastmod>2020-12-09T12:14:46+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/strategy-tidd/</loc>
     <lastmod>2020-12-08T12:12:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/thinking-tidd-part2/</loc>
     <lastmod>2020-12-07T12:09:29+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/thinking-tidd-part1/</loc>
     <lastmod>2020-12-06T12:08:29+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/mindset/</loc>
     <lastmod>2020-12-04T12:06:12+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/okr-tidd-case/encount-tidd/</loc>
     <lastmod>2020-12-03T11:24:19+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/posts/okr-tidd-case/</loc>
     <lastmod>2020-12-02T00:04:52+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/</loc>
   </url>
-  
 </urlset>
