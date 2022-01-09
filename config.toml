@@ -4,7 +4,6 @@ languageCode = "ja"
 hasCJKLanguage = true
 title = "TypeError:"
 theme = "accessible-minimalism-hugo-theme"
-googleAnalytics = "UA-184310934-2"
 
 [[menu.main]]
   name = "ホーム"
