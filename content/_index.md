@@ -14,8 +14,9 @@ title: "TypeError:"
 
 ## 対外活動
 
-* [JANOG49 Meeting](https://www.janog.gr.jp/meeting/janog49/clos/)
-	* Clos Network Topology を運用するために、どのような取り組みをしていますか
+* [JANOG49 Meeting](https://www.janog.gr.jp/meeting/janog49/)
+	* [Clos Network Topology を運用するために、どのような取り組みをしていますか](https://www.janog.gr.jp/meeting/janog49/clos/)
+	* [プログラム紹介「Clos Network Topologyを運用するために、どのような取り組みをしていますか」](https://www.janog.gr.jp/meeting/janog49/nl-009/)
 * [XP祭り2021](https://confengine.com/conferences/xp2021/proposal/15819/okr)
 	* OKRとチケット駆動開発を組み合わせたチームでの取り組み
 * [第20回redmine.tokyo勉強会](https://redmine-tokyo.connpass.com/event/210332/)
