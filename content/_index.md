@@ -17,6 +17,7 @@ title: "TypeError:"
 * [JANOG49 Meeting](https://www.janog.gr.jp/meeting/janog49/)
 	* [Clos Network Topology を運用するために、どのような取り組みをしていますか](https://www.janog.gr.jp/meeting/janog49/clos/)
 	* [プログラム紹介「Clos Network Topologyを運用するために、どのような取り組みをしていますか」](https://www.janog.gr.jp/meeting/janog49/nl-009/)
+	* [JANOG49「Clos Network Topologyを運用するために、どのような取り組みをしていますか」レポート](https://knowledge.sakura.ad.jp/30527/)
 * [XP祭り2021](https://confengine.com/conferences/xp2021)
 	* [OKRとチケット駆動開発を組み合わせたチームでの取り組み](https://confengine.com/conferences/xp2021/proposal/15819/okr)
 	* [発表資料](https://speakerdeck.com/zinrai/okr-tidd-knowledge)
